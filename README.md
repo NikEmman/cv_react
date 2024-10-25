@@ -1,8 +1,11 @@
-# React + Vite
+# CV builder
+This is a React project for this [The Odin Project](https://www.theodinproject.com/lessons/react-new-cv-application#project-solution)lesson
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Skills
+* Create a basic React app
+* Properly manage to pass state and props up and down the component tree.
+* [Live](https://brilliant-belekoy-2a1640.netlify.app/) deploy by [Netlify](https://www.netlify.com/)
 
-Currently, two official plugins are available:
+### Assets
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The title cv svg was provided by [SVG Repo](https://www.svgrepo.com/)
