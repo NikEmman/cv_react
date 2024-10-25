@@ -1,35 +1,51 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Section from './Section'
+import { data } from './data'
 import './App.css'
+import Button from './Button'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isEditable, setIsEditable] = useState(false);
+  const [myData, setMyData] = useState(data);
+
+  const handleEditClick = () => {
+    setIsEditable(true);
+  };
+
+  const handleSaveClick = () => {
+    // Here you could do something like export the updatedData to data.js
+    setIsEditable(false)
+    console.log('Data saved:', myData);
+  };
+
+  const updateSection = (updatedSection) => {
+    const updatedData = {
+      ...myData,
+      sections: myData.sections.map(section =>
+        section.id === updatedSection.id ? updatedSection : section
+      )
+    };
+    setMyData(updatedData);
+  };
+
+  const sections = myData.sections.map(section => (
+    <Section
+      key={section.id}
+      section={section}
+      isEditableOn={isEditable}
+      updateSection={updateSection}
+    />
+  ));
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Curriculum Vitae</h1>
+      
+      <Button onEditClick={handleEditClick} onSaveClick={handleSaveClick}isEditable={isEditable}></Button>
+      {sections}
+      <button onClick={window.print}>Print</button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
