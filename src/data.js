@@ -1,38 +1,65 @@
-export const data = {
+const defaultData = {
   sections: [
     {
-      id: 1,
-      title: "Personal Info",
+      title: "Contact",
       items: [
-        { id: 101, field: "First Name", value: "Me" },
-        { id: 102, field: "Last Name", value: "Myself and I" },
-        { id: 103, field: "Email", value: "myown@example.com" },
-        { id: 104, field: "Phone", value: "6989824917" },
+        { field: "First Name:", value: "Me" },
+        { field: "Last Name:", value: "Myself and I" },
+        { field: "Email:", value: "myown@example.com" },
+        { field: "Phone:", value: "+3069858120255" },
       ],
     },
     {
-      id: 2,
       title: "Education",
       items: [
-        { id: 201, field: "School Title", value: "GeekTown University" },
-        { id: 202, field: "Title of Study", value: "Bed Warmer" },
-        { id: 203, field: "Start Date", value: " September 10 2002" },
+        { field: "School Title:", value: "GeekTown University" },
+        { field: "Title of Study:", value: "Bed Warmer" },
+        { field: "Start Date:", value: " September 10 2002" },
       ],
     },
     {
-      id: 3,
-      title: "Practical Experience",
+      title: "About Me",
       items: [
-        { id: 301, field: "Company name", value: "GlobalInc" },
-        { id: 302, field: "Position title", value: "Software Developer" },
         {
-          id: 303,
-          field: "Main responsibilities",
+          field: "",
+          value:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex tempore pariatur accusamus adipisci facere? Perspiciatis delectus quas tempora officiis dolorem, dolore eum aut doloribus! Modi facilis et veritatis culpa architecto!",
+        },
+      ],
+    },
+    {
+      title: "Work experience",
+      items: [
+        { field: "Company name:", value: "GlobalInc" },
+        { field: "Position title:", value: "Software Developer" },
+        {
+          field: "Main responsibilities:",
           value: "Create the best ever software",
         },
-        { id: 304, field: "From", value: "November 20 2020" },
-        { id: 305, field: "Until", value: "Today" },
+        { field: "From:", value: "November 20 2020" },
+        { field: "Until:", value: "Today" },
+      ],
+    },
+    {
+      title: "Skills",
+      items: [
+        { field: "", value: "Strategic Planning" },
+        { field: "", value: "Problem Solving" },
+        {
+          field: "",
+          value: "HTML/CSS/JS",
+        },
+        { field: "", value: "Rails" },
+        { field: "", value: "React" },
+      ],
+    },
+    {
+      title: "Languages",
+      items: [
+        { field: "", value: "Urdu (fluent)" },
+        { field: "", value: "Mongolian (native)" },
       ],
     },
   ],
 };
+export default defaultData;

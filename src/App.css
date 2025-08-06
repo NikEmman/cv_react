@@ -10,6 +10,10 @@
   font-weight: 400;
   margin: 0;
 }
+.body-classic {
+  background-color: #213547;
+  color: white;
+}
 
 button {
   border-radius: 8px;
@@ -36,4 +40,13 @@ label {
   button {
     display: none !important;
   }
+}
+.title-modern {
+  color: red;
+}
+.title-classic {
+  color: blue;
+}
+.ul-classic {
+  list-style-type: none;
 }
