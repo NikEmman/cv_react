@@ -9,9 +9,10 @@ const defaultData = {
     {
       title: "Contact",
       items: [
-        { field: "Email:", value: "myown@example.com" },
-        { field: "Phone:", value: "+3069858120255" },
-        { field: "Address", value: "123 Lake Str." },
+        { field: "📧", value: "myown@example.com" },
+        { field: "📞:", value: "+3069858120255" },
+        { field: "📍", value: "123 Pond Str., Lake Town " },
+        { field: "🌐", value: "iamyourguy.com" },
       ],
     },
     {

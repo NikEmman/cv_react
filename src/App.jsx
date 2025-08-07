@@ -53,7 +53,7 @@ function App() {
   const personalSection = myData.sections[0];
 
   return (
-    <div className={`body-${theme}`}>
+    <>
       <header>
         {isEditable ? (
           <button onClick={handleSaveClick}>Save</button>
@@ -67,36 +67,48 @@ function App() {
 
         <button onClick={window.print}>Print</button>
       </header>
-      {isEditable ? (
-        <>
-          <input
-            contentEditable={isEditable}
-            placeholder="First Name"
-            value={personalSection.firstName}
-            onChange={(e) => handlePersonalChange("firstName", e.target.value)}
-          />
-          <input
-            contentEditable={isEditable}
-            placeholder="Last Name"
-            value={personalSection.lastName}
-            onChange={(e) => handlePersonalChange("lastName", e.target.value)}
-          />
-          <input
-            contentEditable={isEditable}
-            placeholder="Job Title"
-            value={personalSection.jobTitle}
-            onChange={(e) => handlePersonalChange("jobTitle", e.target.value)}
-          />
-        </>
-      ) : (
-        <>
-          <h3>{personalSection.firstName + " " + personalSection.lastName}</h3>
-          <h4>{personalSection.jobTitle}</h4>
-        </>
-      )}
+      <div className={`body-${theme}`}>
+        <div className={`hero-${theme}`}>
+          {isEditable ? (
+            <>
+              <input
+                contentEditable={isEditable}
+                placeholder="First Name"
+                value={personalSection.firstName}
+                onChange={(e) =>
+                  handlePersonalChange("firstName", e.target.value)
+                }
+              />
+              <input
+                contentEditable={isEditable}
+                placeholder="Last Name"
+                value={personalSection.lastName}
+                onChange={(e) =>
+                  handlePersonalChange("lastName", e.target.value)
+                }
+              />
+              <input
+                contentEditable={isEditable}
+                placeholder="Job Title"
+                value={personalSection.jobTitle}
+                onChange={(e) =>
+                  handlePersonalChange("jobTitle", e.target.value)
+                }
+              />
+            </>
+          ) : (
+            <>
+              <h3>
+                {personalSection.firstName + " " + personalSection.lastName}
+              </h3>
+              <h4>{personalSection.jobTitle}</h4>
+            </>
+          )}
+        </div>
 
-      {sections}
-    </div>
+        {sections}
+      </div>
+    </>
   );
 }
 
