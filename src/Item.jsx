@@ -6,16 +6,28 @@ function Item({ item, isEditable, onChange, theme }) {
 
   return (
     <li className={`li-${theme}`}>
-      <label>{item.field} </label>
       {isEditable ? (
-        <input
-          type="text"
-          value={item.value}
-          onChange={handleChange}
-          contentEditable={isEditable}
-        />
+        <div className="listItem">
+          {item.field && (
+            <input
+              type="text"
+              value={item.field}
+              onChange={handleChange}
+              contentEditable={isEditable}
+            />
+          )}
+          <input
+            type="text"
+            value={item.value}
+            onChange={handleChange}
+            contentEditable={isEditable}
+          />
+        </div>
       ) : (
-        <span>{item.value}</span>
+        <>
+          <span>{item.field} </span>
+          <span>{item.value}</span>
+        </>
       )}
     </li>
   );

@@ -1,12 +1,17 @@
 const defaultData = {
   sections: [
     {
+      title: "Person",
+      firstName: "Me",
+      lastName: "Myself and I",
+      jobTitle: "Project Manager",
+    },
+    {
       title: "Contact",
       items: [
-        { field: "First Name:", value: "Me" },
-        { field: "Last Name:", value: "Myself and I" },
         { field: "Email:", value: "myown@example.com" },
         { field: "Phone:", value: "+3069858120255" },
+        { field: "Address", value: "123 Lake Str." },
       ],
     },
     {

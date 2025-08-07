@@ -13,6 +13,12 @@
 .body-classic {
   background-color: #213547;
   color: white;
+  min-height: 100vh;
+}
+header {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
 }
 
 button {
@@ -49,4 +55,8 @@ label {
 }
 .ul-classic {
   list-style-type: none;
+}
+.listItem {
+  display: flex;
+  gap: 5px;
 }
