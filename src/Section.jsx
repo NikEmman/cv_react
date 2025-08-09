@@ -1,19 +1,19 @@
 /* eslint-disable react/prop-types */
 import Item from "./Item";
 
-function Section({ section, isEditableOn, updateSection, theme }) {
+function Section({ section, isEditable, handleSectionChange, theme }) {
   const handleItemChange = (updatedItem) => {
     const updatedItems = section.items.map((item) =>
-      item === updatedItem ? updatedItem : item
+      item.field === updatedItem.field ? updatedItem : item
     );
-    updateSection({ ...section, items: updatedItems });
+    handleSectionChange({ ...section, items: updatedItems });
   };
 
   const items = section.items.map((item) => (
     <Item
-      key={section.title + item.value}
+      key={section.title + item.field}
       item={item}
-      isEditable={isEditableOn}
+      isEditable={isEditable}
       onChange={handleItemChange}
       theme={theme}
     />
@@ -21,8 +21,8 @@ function Section({ section, isEditableOn, updateSection, theme }) {
 
   return (
     <div>
-      <h2 className={`title-${theme}`}>{section.title}</h2>
-      <ul className={`ul-${theme}`}>{items}</ul>
+      <h2>{section.title}</h2>
+      <ul>{items}</ul>
     </div>
   );
 }

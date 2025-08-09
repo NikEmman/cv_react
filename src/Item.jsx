@@ -9,19 +9,9 @@ function Item({ item, isEditable, onChange, theme }) {
       {isEditable ? (
         <div className="listItem">
           {item.field && (
-            <input
-              type="text"
-              value={item.field}
-              onChange={handleChange}
-              contentEditable={isEditable}
-            />
+            <input type="text" value={item.field} onChange={handleChange} />
           )}
-          <input
-            type="text"
-            value={item.value}
-            onChange={handleChange}
-            contentEditable={isEditable}
-          />
+          <input type="text" value={item.value} onChange={handleChange} />
         </div>
       ) : (
         <>
