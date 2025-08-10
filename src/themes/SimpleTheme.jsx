@@ -1,26 +1,29 @@
-import Section from "../Section";
+// import Section from "../Section";
 import PropTypes from "prop-types";
 import "./simpleTheme.css";
+import SideSection from "./SideSection";
 
 export default function SimpleTheme({
   myData,
   isEditable,
   theme,
-  handleSectionChange,
+  handleItemChange,
   handleNameChange,
 }) {
-  const sections = myData.sections
-    .filter((sec) => sec.title != "Person")
-    .map((section) => (
-      <Section
-        key={section.title}
-        section={section}
-        isEditable={isEditable}
-        handleSectionChange={handleSectionChange}
-        theme={theme}
-      />
-    ));
   const personalSection = myData.sections[0];
+  const contactSection = myData.sections.filter(
+    (sec) => sec.title == "Contact"
+  )[0];
+  const skillSection = myData.sections.filter(
+    (sec) => sec.title == "Skills"
+  )[0];
+  const languageSection = myData.sections.filter(
+    (sec) => sec.title == "Languages"
+  )[0];
+  const aboutSection = myData.sections.filter(
+    (sec) => sec.title == "About Me"
+  )[0];
+
   return (
     <div className={`body-${theme}`}>
       <div className={`hero-${theme}`}>
@@ -51,8 +54,38 @@ export default function SimpleTheme({
           </>
         )}
       </div>
-
-      {sections}
+      <main>
+        <SideSection
+          key={aboutSection.id}
+          section={aboutSection}
+          isEditable={isEditable}
+          noListStyle={"noListStyle"}
+          handleItemChange={handleItemChange}
+        ></SideSection>
+      </main>
+      <aside>
+        <SideSection
+          key={contactSection.id}
+          section={contactSection}
+          isEditable={isEditable}
+          noListStyle={"noListStyle"}
+          handleItemChange={handleItemChange}
+        ></SideSection>
+        <SideSection
+          key={skillSection.id}
+          section={skillSection}
+          isEditable={isEditable}
+          noListStyle={""}
+          handleItemChange={handleItemChange}
+        ></SideSection>
+        <SideSection
+          key={languageSection.id}
+          section={languageSection}
+          isEditable={isEditable}
+          noListStyle={""}
+          handleItemChange={handleItemChange}
+        ></SideSection>
+      </aside>
     </div>
   );
 }
@@ -62,5 +95,5 @@ SimpleTheme.propTypes = {
   handleNameChange: PropTypes.func,
   myData: PropTypes.object,
   theme: PropTypes.string,
-  handleSectionChange: PropTypes.func,
+  handleItemChange: PropTypes.func,
 };

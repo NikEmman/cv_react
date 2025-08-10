@@ -19,3 +19,12 @@
   font-size: 4rem;
   font-weight: 500;
 }
+.noListStyle {
+  list-style: none;
+}
+.borderBottom {
+  border-bottom: 2px solid black;
+}
+textarea {
+  width: 100%;
+}

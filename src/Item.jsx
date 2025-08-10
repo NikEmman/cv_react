@@ -3,7 +3,12 @@ function Item({ item, isEditable, onChange, theme }) {
   const handleChange = (e) => {
     onChange({ ...item, value: e.target.value });
   };
-
+  const inputType =
+    item.value.length > 30 ? (
+      <textarea type="text" value={item.value} onChange={handleChange} />
+    ) : (
+      <input type="text" value={item.value} onChange={handleChange} />
+    );
   return (
     <li className={`li-${theme}`}>
       {isEditable ? (
@@ -11,7 +16,7 @@ function Item({ item, isEditable, onChange, theme }) {
           {item.field && (
             <input type="text" value={item.field} onChange={handleChange} />
           )}
-          <input type="text" value={item.value} onChange={handleChange} />
+          {inputType}
         </div>
       ) : (
         <>

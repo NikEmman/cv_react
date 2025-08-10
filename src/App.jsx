@@ -25,16 +25,30 @@ function App() {
     });
   };
 
-  const handleSectionChange = (updatedSection) => {
-    const updatedData = {
-      ...myData,
-      sections: myData.sections.map((section) =>
-        section === updatedSection ? updatedSection : section
-      ),
-    };
-    setMyData(updatedData);
-  };
+  // const handleSectionChange = (updatedSection) => {
+  //   const updatedData = {
+  //     ...myData,
+  //     sections: myData.sections.map((section) =>
+  //       section === updatedSection ? updatedSection : section
+  //     ),
+  //   };
+  //   setMyData(updatedData);
+  // };
+  const handleItemChange = (updatedItem) => {
+    setMyData((prevData) => {
+      const updatedSections = prevData.sections.map((section) => {
+        if (!section.items) return section;
 
+        const updatedItems = section.items.map((item) =>
+          item.id === updatedItem.id ? updatedItem : item
+        );
+
+        return { ...section, items: updatedItems };
+      });
+
+      return { ...prevData, sections: updatedSections };
+    });
+  };
   let ThemeComponent;
   switch (theme) {
     case "simple":
@@ -66,7 +80,8 @@ function App() {
         myData={myData}
         isEditable={isEditable}
         theme={theme}
-        handleSectionChange={handleSectionChange}
+        // handleSectionChange={handleSectionChange}
+        handleItemChange={handleItemChange}
         handleNameChange={handleNameChange}
       />
     </>

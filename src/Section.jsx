@@ -15,7 +15,6 @@ function Section({ section, isEditable, handleSectionChange, theme }) {
       item={item}
       isEditable={isEditable}
       onChange={handleItemChange}
-      theme={theme}
     />
   ));
 
