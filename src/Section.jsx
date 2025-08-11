@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Item from "./Item";
 
-function Section({ section, isEditable, handleSectionChange, theme }) {
+function Section({ section, isEditable, handleSectionChange }) {
   const handleItemChange = (updatedItem) => {
     const updatedItems = section.items.map((item) =>
       item.field === updatedItem.field ? updatedItem : item

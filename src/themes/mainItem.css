@@ -1,0 +1,4 @@
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+}

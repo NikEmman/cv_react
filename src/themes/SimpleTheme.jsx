@@ -2,6 +2,7 @@
 import PropTypes from "prop-types";
 import "./simpleTheme.css";
 import SideSection from "./SideSection";
+import MainSection from "./MainSection";
 
 export default function SimpleTheme({
   myData,
@@ -23,69 +24,83 @@ export default function SimpleTheme({
   const aboutSection = myData.sections.filter(
     (sec) => sec.title == "About Me"
   )[0];
+  const mainItems = myData.sections
+    .filter((sec) => sec.title == "Work experience" || sec.title == "Education")
+    .map((sec) => (
+      <MainSection
+        key={sec.id}
+        section={sec}
+        isEditable={isEditable}
+      ></MainSection>
+    ));
 
   return (
     <div className={`body-${theme}`}>
-      <div className={`hero-${theme}`}>
-        {isEditable ? (
-          <>
-            <input
-              placeholder="First Name"
-              value={personalSection.firstName}
-              onChange={(e) => handleNameChange("firstName", e.target.value)}
-            />
-            <input
-              placeholder="Last Name"
-              value={personalSection.lastName}
-              onChange={(e) => handleNameChange("lastName", e.target.value)}
-            />
-            <input
-              placeholder="Job Title"
-              value={personalSection.jobTitle}
-              onChange={(e) => handleNameChange("jobTitle", e.target.value)}
-            />
-          </>
-        ) : (
-          <>
-            <h3>
-              {personalSection.firstName + " " + personalSection.lastName}
-            </h3>
-            <h4>{personalSection.jobTitle}</h4>
-          </>
-        )}
+      <div className={`container-${theme}`}>
+        <div className={`hero-${theme}`}>
+          {isEditable ? (
+            <>
+              <input
+                placeholder="First Name"
+                value={personalSection.firstName}
+                onChange={(e) => handleNameChange("firstName", e.target.value)}
+              />
+              <input
+                placeholder="Last Name"
+                value={personalSection.lastName}
+                onChange={(e) => handleNameChange("lastName", e.target.value)}
+              />
+              <input
+                placeholder="Job Title"
+                value={personalSection.jobTitle}
+                onChange={(e) => handleNameChange("jobTitle", e.target.value)}
+              />
+            </>
+          ) : (
+            <>
+              <h3>
+                {personalSection.firstName + " " + personalSection.lastName}
+              </h3>
+              <h4>{personalSection.jobTitle}</h4>
+            </>
+          )}
+        </div>
+        <div className="mainContainer">
+          <main>
+            <SideSection
+              key={aboutSection.id}
+              section={aboutSection}
+              isEditable={isEditable}
+              noListStyle={"noListStyle"}
+              handleItemChange={handleItemChange}
+            ></SideSection>
+            {mainItems}
+          </main>
+          <aside>
+            <SideSection
+              key={contactSection.id}
+              section={contactSection}
+              isEditable={isEditable}
+              noListStyle={"noListStyle"}
+              handleItemChange={handleItemChange}
+            ></SideSection>
+            <SideSection
+              key={skillSection.id}
+              section={skillSection}
+              isEditable={isEditable}
+              noListStyle={""}
+              handleItemChange={handleItemChange}
+            ></SideSection>
+            <SideSection
+              key={languageSection.id}
+              section={languageSection}
+              isEditable={isEditable}
+              noListStyle={""}
+              handleItemChange={handleItemChange}
+            ></SideSection>
+          </aside>
+        </div>
       </div>
-      <main>
-        <SideSection
-          key={aboutSection.id}
-          section={aboutSection}
-          isEditable={isEditable}
-          noListStyle={"noListStyle"}
-          handleItemChange={handleItemChange}
-        ></SideSection>
-      </main>
-      <aside>
-        <SideSection
-          key={contactSection.id}
-          section={contactSection}
-          isEditable={isEditable}
-          noListStyle={"noListStyle"}
-          handleItemChange={handleItemChange}
-        ></SideSection>
-        <SideSection
-          key={skillSection.id}
-          section={skillSection}
-          isEditable={isEditable}
-          noListStyle={""}
-          handleItemChange={handleItemChange}
-        ></SideSection>
-        <SideSection
-          key={languageSection.id}
-          section={languageSection}
-          isEditable={isEditable}
-          noListStyle={""}
-          handleItemChange={handleItemChange}
-        ></SideSection>
-      </aside>
     </div>
   );
 }
