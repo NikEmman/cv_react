@@ -25,15 +25,6 @@ function App() {
     });
   };
 
-  // const handleSectionChange = (updatedSection) => {
-  //   const updatedData = {
-  //     ...myData,
-  //     sections: myData.sections.map((section) =>
-  //       section === updatedSection ? updatedSection : section
-  //     ),
-  //   };
-  //   setMyData(updatedData);
-  // };
   const handleItemChange = (updatedItem) => {
     setMyData((prevData) => {
       const updatedSections = prevData.sections.map((section) => {

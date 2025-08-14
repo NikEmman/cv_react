@@ -50,9 +50,9 @@ const defaultData = {
       title: "Work experience",
       items: [
         {
-          id: 301,
-          title: "Bed Warmer",
-          institution: "GeekTown University",
+          id: 501,
+          title: "Cheeseburger Tester",
+          institution: "BigAss Company",
           from: "September 2002",
           until: " September 2030",
           desc: [

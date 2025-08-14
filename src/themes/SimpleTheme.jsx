@@ -31,6 +31,7 @@ export default function SimpleTheme({
         key={sec.id}
         section={sec}
         isEditable={isEditable}
+        handleItemChange={handleItemChange}
       ></MainSection>
     ));
 
@@ -83,6 +84,7 @@ export default function SimpleTheme({
               isEditable={isEditable}
               noListStyle={"noListStyle"}
               handleItemChange={handleItemChange}
+              hasField={true}
             ></SideSection>
             <SideSection
               key={skillSection.id}

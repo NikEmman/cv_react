@@ -3,7 +3,12 @@ import MainItem from "./MainItem";
 
 export default function MainSection({ section, isEditable, handleItemChange }) {
   const sectionItems = section.items.map((item) => (
-    <MainItem key={item.id} item={item} isEditable={isEditable}></MainItem>
+    <MainItem
+      key={item.id}
+      item={item}
+      isEditable={isEditable}
+      handleItemChange={handleItemChange}
+    ></MainItem>
   ));
   return (
     <div>
