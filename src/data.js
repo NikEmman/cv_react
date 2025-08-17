@@ -17,22 +17,7 @@ const defaultData = {
         { id: 204, field: "🌐", value: "iamyourguy.com" },
       ],
     },
-    {
-      id: 300,
-      title: "Education",
-      items: [
-        {
-          id: 301,
-          title: "Bed Warmer",
-          institution: "GeekTown University",
-          from: "September 2002",
-          until: " September 2030",
-          desc: [
-            "Lorem big time lndksjdkbdf jbsdb kjb lsjd ljd kj ljsd lj ljshd ljsd l",
-          ],
-        },
-      ],
-    },
+
     {
       id: 400,
       title: "About Me",
@@ -70,6 +55,19 @@ const defaultData = {
             "Lorem big time lndksjdkbdf jbsdb kjb lsjd ljd kj ljsd lj ljshd ljsd l",
             "Another thing i did there",
           ],
+        },
+      ],
+    },
+    {
+      id: 300,
+      title: "Education",
+      items: [
+        {
+          id: 301,
+          title: "Bed Warmer",
+          institution: "GeekTown University",
+          from: "September 2002",
+          until: " September 2030",
         },
       ],
     },

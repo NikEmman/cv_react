@@ -36,7 +36,8 @@ button:focus-visible {
 }
 
 @media print {
-  button {
+  button,
+  select {
     display: none !important;
   }
 }

@@ -31,6 +31,7 @@ export default function MainItem({ item, isEditable, handleItemChange }) {
               <input
                 type="text"
                 value={item.institution}
+                placeholder="Institution name"
                 onChange={handleFieldChange("institution")}
               />
             </h4>
@@ -38,12 +39,14 @@ export default function MainItem({ item, isEditable, handleItemChange }) {
               <input
                 type="text"
                 value={item.from}
+                placeholder="Start date"
                 onChange={handleFieldChange("from")}
-              />{" "}
-              -{" "}
+              />
+              -
               <input
                 type="text"
                 value={item.until}
+                placeholder="End date"
                 onChange={handleFieldChange("until")}
               />
             </div>
@@ -52,6 +55,7 @@ export default function MainItem({ item, isEditable, handleItemChange }) {
             <input
               type="text"
               value={item.title}
+              placeholder="Job/Degree title"
               onChange={handleFieldChange("title")}
             />
           </p>

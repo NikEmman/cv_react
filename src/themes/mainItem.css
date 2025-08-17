@@ -2,3 +2,24 @@
   display: flex;
   justify-content: space-between;
 }
+.hero-simple:has(input) {
+  display: flex;
+  flex-direction: column;
+}
+.hero-simpe input {
+  width: auto;
+}
+
+.hero-simple div > input {
+  font-size: 2rem;
+  font-weight: 900;
+  width: auto;
+}
+.hero-simple > input {
+  font-size: 2rem;
+  font-weight: 500;
+  width: auto;
+}
+ul {
+  padding-top: 10px;
+}

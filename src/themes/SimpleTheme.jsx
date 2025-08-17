@@ -11,19 +11,13 @@ export default function SimpleTheme({
   handleItemChange,
   handleNameChange,
 }) {
-  const personalSection = myData.sections[0];
-  const contactSection = myData.sections.filter(
-    (sec) => sec.title == "Contact"
-  )[0];
-  const skillSection = myData.sections.filter(
-    (sec) => sec.title == "Skills"
-  )[0];
-  const languageSection = myData.sections.filter(
+  const personalSection = myData.sections.find((sec) => sec.title == "Person");
+  const contactSection = myData.sections.find((sec) => sec.title == "Contact");
+  const skillSection = myData.sections.find((sec) => sec.title == "Skills");
+  const languageSection = myData.sections.find(
     (sec) => sec.title == "Languages"
-  )[0];
-  const aboutSection = myData.sections.filter(
-    (sec) => sec.title == "About Me"
-  )[0];
+  );
+  const aboutSection = myData.sections.find((sec) => sec.title == "About Me");
   const mainItems = myData.sections
     .filter((sec) => sec.title == "Work experience" || sec.title == "Education")
     .map((sec) => (
@@ -41,16 +35,20 @@ export default function SimpleTheme({
         <div className={`hero-${theme}`}>
           {isEditable ? (
             <>
-              <input
-                placeholder="First Name"
-                value={personalSection.firstName}
-                onChange={(e) => handleNameChange("firstName", e.target.value)}
-              />
-              <input
-                placeholder="Last Name"
-                value={personalSection.lastName}
-                onChange={(e) => handleNameChange("lastName", e.target.value)}
-              />
+              <div>
+                <input
+                  placeholder="First Name"
+                  value={personalSection.firstName}
+                  onChange={(e) =>
+                    handleNameChange("firstName", e.target.value)
+                  }
+                />
+                <input
+                  placeholder="Last Name"
+                  value={personalSection.lastName}
+                  onChange={(e) => handleNameChange("lastName", e.target.value)}
+                />
+              </div>
               <input
                 placeholder="Job Title"
                 value={personalSection.jobTitle}

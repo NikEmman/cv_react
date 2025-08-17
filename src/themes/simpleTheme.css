@@ -6,8 +6,18 @@
   justify-content: center;
   align-items: center;
 }
+input,
+textarea {
+  background-color: #e7e8e9;
+  padding: 2px;
+  border-radius: 5px;
+}
+input {
+  width: fit-content;
+}
 .container-simple {
-  width: 55vw;
+  width: 21cm;
+  height: 29.7cm;
 }
 .hero-simple {
   display: flex;
@@ -17,11 +27,11 @@
   padding-bottom: 10px;
 }
 .hero-simple h3 {
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 900;
 }
 .hero-simple h4 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 .mainContainer {
@@ -37,10 +47,10 @@ aside {
   gap: 15px;
 }
 main {
-  flex: 3;
+  flex: 5;
 }
 aside {
-  flex: 1;
+  flex: 2;
 }
 main > div {
   border-left: 2px solid black;
