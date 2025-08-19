@@ -10,6 +10,8 @@ export default function SimpleTheme({
   theme,
   handleItemChange,
   handleNameChange,
+  handleAddItem,
+  handleRemoveItem,
 }) {
   const personalSection = myData.sections.find((sec) => sec.title == "Person");
   const contactSection = myData.sections.find((sec) => sec.title == "Contact");
@@ -72,6 +74,9 @@ export default function SimpleTheme({
               isEditable={isEditable}
               noListStyle={"noListStyle"}
               handleItemChange={handleItemChange}
+              handleAddItem={handleAddItem}
+              handleRemoveItem={handleRemoveItem}
+              canAddItem={false}
             ></SideSection>
             {mainItems}
           </main>
@@ -82,6 +87,8 @@ export default function SimpleTheme({
               isEditable={isEditable}
               noListStyle={"noListStyle"}
               handleItemChange={handleItemChange}
+              handleAddItem={handleAddItem}
+              handleRemoveItem={handleRemoveItem}
               hasField={true}
             ></SideSection>
             <SideSection
@@ -90,6 +97,8 @@ export default function SimpleTheme({
               isEditable={isEditable}
               noListStyle={""}
               handleItemChange={handleItemChange}
+              handleAddItem={handleAddItem}
+              handleRemoveItem={handleRemoveItem}
             ></SideSection>
             <SideSection
               key={languageSection.id}
@@ -97,6 +106,8 @@ export default function SimpleTheme({
               isEditable={isEditable}
               noListStyle={""}
               handleItemChange={handleItemChange}
+              handleAddItem={handleAddItem}
+              handleRemoveItem={handleRemoveItem}
             ></SideSection>
           </aside>
         </div>
@@ -111,4 +122,6 @@ SimpleTheme.propTypes = {
   myData: PropTypes.object,
   theme: PropTypes.string,
   handleItemChange: PropTypes.func,
+  handleAddItem: PropTypes.func,
+  handleRemoveItem: PropTypes.func,
 };

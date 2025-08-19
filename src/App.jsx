@@ -13,6 +13,46 @@ function App() {
     setIsEditable(false);
     console.log("Data saved:", myData);
   };
+  const handleAddItem = (sectionId) => {
+    setMyData((prevData) => {
+      const updatedSections = prevData.sections.map((section) => {
+        if (section.id !== sectionId || !section.items) return section;
+
+        const newItem = {
+          id: section.items.length + 1,
+          field: "",
+          value: "",
+        };
+
+        return {
+          ...section,
+          items: [...section.items, newItem],
+        };
+      });
+
+      return { ...prevData, sections: updatedSections };
+    });
+  };
+
+  const handleRemoveItem = (sectionId) => {
+    setMyData((prevData) => {
+      const updatedSections = prevData.sections.map((section) => {
+        if (
+          section.id !== sectionId ||
+          !section.items ||
+          section.items.length === 0
+        )
+          return section;
+
+        return {
+          ...section,
+          items: section.items.slice(0, -1),
+        };
+      });
+
+      return { ...prevData, sections: updatedSections };
+    });
+  };
 
   const handleNameChange = (fieldName, newValue) => {
     setMyData((prevData) => {
@@ -71,9 +111,10 @@ function App() {
         myData={myData}
         isEditable={isEditable}
         theme={theme}
-        // handleSectionChange={handleSectionChange}
         handleItemChange={handleItemChange}
         handleNameChange={handleNameChange}
+        handleAddItem={handleAddItem}
+        handleRemoveItem={handleRemoveItem}
       />
     </>
   );
