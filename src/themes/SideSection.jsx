@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Item from "../Item";
+import AddRemoveButtons from "../AddRemoveButtons";
 export default function SideSection({
   section,
   isEditable,
@@ -21,20 +22,14 @@ export default function SideSection({
   return (
     <div>
       <h3 className="borderBottom">{section.title}</h3>
-      <ul className={`${noListStyle}`}>{items}</ul>
       {isEditable && canAddItem && (
-        <div className="buttonContainer">
-          <button className="add" onClick={() => handleAddItem(section.id)}>
-            +
-          </button>
-          <button
-            className="remove"
-            onClick={() => handleRemoveItem(section.id)}
-          >
-            -
-          </button>
-        </div>
+        <AddRemoveButtons
+          onClickAdd={handleAddItem}
+          onClickRemove={handleRemoveItem}
+          sectionId={section.id}
+        />
       )}
+      <ul className={`${noListStyle}`}>{items}</ul>
     </div>
   );
 }

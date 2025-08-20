@@ -33,6 +33,28 @@ function App() {
       return { ...prevData, sections: updatedSections };
     });
   };
+  const handleAddMainItem = (sectionId) => {
+    setMyData((prevData) => {
+      const updatedSections = prevData.sections.map((section) => {
+        if (section.id !== sectionId || !section.items) return section;
+
+        const newItem = {
+          id: section.items.length + 1,
+          title: "",
+          institution: "",
+          from: "",
+          until: "",
+        };
+
+        return {
+          ...section,
+          items: [...section.items, newItem],
+        };
+      });
+
+      return { ...prevData, sections: updatedSections };
+    });
+  };
 
   const handleRemoveItem = (sectionId) => {
     setMyData((prevData) => {
@@ -115,6 +137,7 @@ function App() {
         handleNameChange={handleNameChange}
         handleAddItem={handleAddItem}
         handleRemoveItem={handleRemoveItem}
+        handleAddMainItem={handleAddMainItem}
       />
     </>
   );

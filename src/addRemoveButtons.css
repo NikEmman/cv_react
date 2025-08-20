@@ -1,0 +1,27 @@
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.add {
+  background-color: darkgreen;
+  color: white;
+  font-weight: 800;
+  font-size: large;
+  padding: 5px 10px;
+}
+.add:hover {
+  background-color: white;
+  color: darkgreen;
+}
+.remove {
+  background-color: darkred;
+  color: white;
+  font-weight: 800;
+  font-size: large;
+  padding: 5px 10px;
+}
+.remove:hover {
+  background-color: white;
+  color: darkred;
+}
