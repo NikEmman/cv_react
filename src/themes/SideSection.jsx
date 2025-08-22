@@ -27,6 +27,7 @@ export default function SideSection({
           onClickAdd={handleAddItem}
           onClickRemove={handleRemoveItem}
           sectionId={section.id}
+          buttonTitle={section.title}
         />
       )}
       <ul className={`${noListStyle}`}>{items}</ul>

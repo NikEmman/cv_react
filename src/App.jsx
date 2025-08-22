@@ -33,6 +33,56 @@ function App() {
       return { ...prevData, sections: updatedSections };
     });
   };
+  const handleAddDescriptionItem = (itemId) => {
+    setMyData((prevData) => {
+      const updatedSections = prevData.sections.map((section) => {
+        if (section.title !== "Work experience" || !section.items)
+          return section;
+
+        const updatedItems = section.items.map((item) => {
+          if (item.id !== itemId || !item.desc) return item;
+
+          return {
+            ...item,
+            desc: [...item.desc, ""],
+          };
+        });
+
+        return {
+          ...section,
+          items: updatedItems,
+        };
+      });
+
+      return { ...prevData, sections: updatedSections };
+    });
+  };
+  const handleDeleteDescriptionItem = (itemId) => {
+    setMyData((prevData) => {
+      const updatedSections = prevData.sections.map((section) => {
+        if (section.title !== "Work experience" || !section.items)
+          return section;
+
+        const updatedItems = section.items.map((item) => {
+          if (item.id !== itemId || !item.desc || item.desc.length === 0)
+            return item;
+
+          return {
+            ...item,
+            desc: item.desc.slice(0, -1), // Remove last item
+          };
+        });
+
+        return {
+          ...section,
+          items: updatedItems,
+        };
+      });
+
+      return { ...prevData, sections: updatedSections };
+    });
+  };
+
   const handleAddMainItem = (sectionId) => {
     setMyData((prevData) => {
       const updatedSections = prevData.sections.map((section) => {
@@ -138,6 +188,8 @@ function App() {
         handleAddItem={handleAddItem}
         handleRemoveItem={handleRemoveItem}
         handleAddMainItem={handleAddMainItem}
+        handleAddDescriptionItem={handleAddDescriptionItem}
+        handleDeleteDescriptionItem={handleDeleteDescriptionItem}
       />
     </>
   );

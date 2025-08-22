@@ -8,6 +8,8 @@ export default function MainSection({
   handleItemChange,
   handleAddMainItem,
   handleRemoveItem,
+  handleAddDescriptionItem,
+  handleDeleteDescriptionItem,
 }) {
   const sectionItems = section.items.map((item) => (
     <MainItem
@@ -15,6 +17,9 @@ export default function MainSection({
       item={item}
       isEditable={isEditable}
       handleItemChange={handleItemChange}
+      handleAddDescriptionItem={handleAddDescriptionItem}
+      handleDeleteDescriptionItem={handleDeleteDescriptionItem}
+      buttonTitle={section.title}
     ></MainItem>
   ));
   return (
@@ -25,6 +30,7 @@ export default function MainSection({
           onClickAdd={handleAddMainItem}
           onClickRemove={handleRemoveItem}
           sectionId={section.id}
+          buttonTitle={section.title.split(" ")[0]}
         />
       )}
 
@@ -38,4 +44,6 @@ MainSection.propTypes = {
   handleItemChange: PropTypes.func,
   handleAddMainItem: PropTypes.func,
   handleRemoveItem: PropTypes.func,
+  handleAddDescriptionItem: PropTypes.func,
+  handleDeleteDescriptionItem: PropTypes.func,
 };

@@ -13,6 +13,8 @@ export default function SimpleTheme({
   handleAddItem,
   handleRemoveItem,
   handleAddMainItem,
+  handleAddDescriptionItem,
+  handleDeleteDescriptionItem,
 }) {
   const personalSection = myData.sections.find((sec) => sec.title == "Person");
   const contactSection = myData.sections.find((sec) => sec.title == "Contact");
@@ -31,6 +33,8 @@ export default function SimpleTheme({
         handleItemChange={handleItemChange}
         handleAddMainItem={handleAddMainItem}
         handleRemoveItem={handleRemoveItem}
+        handleAddDescriptionItem={handleAddDescriptionItem}
+        handleDeleteDescriptionItem={handleDeleteDescriptionItem}
       ></MainSection>
     ));
 
@@ -128,4 +132,6 @@ SimpleTheme.propTypes = {
   handleAddItem: PropTypes.func,
   handleRemoveItem: PropTypes.func,
   handleAddMainItem: PropTypes.func,
+  handleAddDescriptionItem: PropTypes.func,
+  handleDeleteDescriptionItem: PropTypes.func,
 };

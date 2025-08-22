@@ -4,13 +4,22 @@ export default function AddRemoveButtons({
   onClickAdd,
   onClickRemove,
   sectionId,
+  buttonTitle,
 }) {
   return (
     <div className="buttonContainer">
-      <button className="add" onClick={() => onClickAdd(sectionId)}>
+      <button
+        title={`Add ${buttonTitle}`}
+        className="add"
+        onClick={() => onClickAdd(sectionId)}
+      >
         +
       </button>
-      <button className="remove" onClick={() => onClickRemove(sectionId)}>
+      <button
+        title={`Remove ${buttonTitle}`}
+        className="remove"
+        onClick={() => onClickRemove(sectionId)}
+      >
         -
       </button>
     </div>
@@ -20,4 +29,5 @@ AddRemoveButtons.propTypes = {
   onClickAdd: PropTypes.func.isRequired,
   onClickRemove: PropTypes.func.isRequired,
   sectionId: PropTypes.string.isRequired,
+  buttonTitle: PropTypes.string,
 };

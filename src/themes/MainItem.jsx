@@ -1,7 +1,15 @@
 import PropTypes from "prop-types";
 import "./mainItem.css";
+import AddRemoveButtons from "../AddRemoveButtons";
 
-export default function MainItem({ item, isEditable, handleItemChange }) {
+export default function MainItem({
+  item,
+  isEditable,
+  handleItemChange,
+  handleAddDescriptionItem,
+  handleDeleteDescriptionItem,
+  buttonTitle,
+}) {
   const handleFieldChange = (field) => (e) => {
     handleItemChange({ ...item, [field]: e.target.value });
   };
@@ -18,7 +26,11 @@ export default function MainItem({ item, isEditable, handleItemChange }) {
     item.desc &&
     item.desc.map((desc, index) => (
       <li key={index}>
-        <input value={desc} onChange={handleDescChange(index)} />
+        <input
+          placeholder="Thing you accomplished"
+          value={desc}
+          onChange={handleDescChange(index)}
+        />
       </li>
     ));
 
@@ -59,6 +71,13 @@ export default function MainItem({ item, isEditable, handleItemChange }) {
               onChange={handleFieldChange("title")}
             />
           </p>
+          {item.desc && (
+            <AddRemoveButtons
+              onClickAdd={() => handleAddDescriptionItem(item.id)}
+              onClickRemove={() => handleDeleteDescriptionItem(item.id)}
+              buttonTitle={buttonTitle + " description item"}
+            />
+          )}
           <ul>{itemDescriptionsEditable}</ul>
         </>
       ) : (
@@ -80,4 +99,7 @@ MainItem.propTypes = {
   item: PropTypes.object,
   isEditable: PropTypes.bool,
   handleItemChange: PropTypes.func,
+  handleAddDescriptionItem: PropTypes.func,
+  handleDeleteDescriptionItem: PropTypes.func,
+  buttonTitle: PropTypes.string,
 };
