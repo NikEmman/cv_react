@@ -21,15 +21,17 @@ export default function SideSection({
 
   return (
     <div>
-      <h3 className="borderBottom">{section.title}</h3>
-      {isEditable && canAddItem && (
-        <AddRemoveButtons
-          onClickAdd={handleAddItem}
-          onClickRemove={handleRemoveItem}
-          sectionId={section.id}
-          buttonTitle={section.title}
-        />
-      )}
+      <div className="borderBottom flex alignItemsCenter justifyContentSpaceBetween">
+        <h3>{section.title}</h3>
+        {isEditable && canAddItem && (
+          <AddRemoveButtons
+            onClickAdd={handleAddItem}
+            onClickRemove={handleRemoveItem}
+            sectionId={section.id}
+            buttonTitle={section.title}
+          />
+        )}
+      </div>
       <ul className={`${noListStyle}`}>{items}</ul>
     </div>
   );

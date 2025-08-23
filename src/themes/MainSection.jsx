@@ -24,15 +24,17 @@ export default function MainSection({
   ));
   return (
     <div>
-      <h3 className="borderBottom">{section.title}</h3>
-      {isEditable && (
-        <AddRemoveButtons
-          onClickAdd={handleAddMainItem}
-          onClickRemove={handleRemoveItem}
-          sectionId={section.id}
-          buttonTitle={section.title.split(" ")[0]}
-        />
-      )}
+      <div className="borderBottom flex alignItemsCenter justifyContentSpaceBetween">
+        <h3>{section.title}</h3>
+
+        {isEditable && (
+          <AddRemoveButtons
+            onClickAdd={() => handleAddMainItem(section.id)}
+            onClickRemove={() => handleRemoveItem(section.id)}
+            buttonTitle={section.title}
+          />
+        )}
+      </div>
 
       {sectionItems}
     </div>

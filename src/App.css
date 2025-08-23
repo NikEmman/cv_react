@@ -34,7 +34,15 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+.flex {
+  display: flex;
+}
+.alignItemsCenter {
+  align-items: center;
+}
+.justifyContentSpaceBetween {
+  justify-content: space-between;
+}
 @media print {
   button,
   select {

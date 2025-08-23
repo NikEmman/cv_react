@@ -47,6 +47,7 @@ export default function MainItem({
                 onChange={handleFieldChange("institution")}
               />
             </h4>
+
             <div className="itemDates">
               <input
                 type="text"
@@ -71,14 +72,19 @@ export default function MainItem({
               onChange={handleFieldChange("title")}
             />
           </p>
-          {item.desc && (
-            <AddRemoveButtons
-              onClickAdd={() => handleAddDescriptionItem(item.id)}
-              onClickRemove={() => handleDeleteDescriptionItem(item.id)}
-              buttonTitle={buttonTitle + " description item"}
-            />
-          )}
-          <ul>{itemDescriptionsEditable}</ul>
+
+          <ul>
+            {item.desc && (
+              <li className="noListStyle">
+                <AddRemoveButtons
+                  onClickAdd={() => handleAddDescriptionItem(item.id)}
+                  onClickRemove={() => handleDeleteDescriptionItem(item.id)}
+                  buttonTitle={buttonTitle + " description item"}
+                />
+              </li>
+            )}
+            {itemDescriptionsEditable}
+          </ul>
         </>
       ) : (
         <>
