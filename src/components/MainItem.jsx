@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import "./mainItem.css";
-import AddRemoveButtons from "../AddRemoveButtons";
+import AddRemoveButtons from "./AddRemoveButtons";
 
 export default function MainItem({
   item,

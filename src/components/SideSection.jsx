@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import Item from "../Item";
-import AddRemoveButtons from "../AddRemoveButtons";
+import SideItem from "./SideItem";
+import AddRemoveButtons from "./AddRemoveButtons";
 export default function SideSection({
   section,
   isEditable,
@@ -11,7 +11,7 @@ export default function SideSection({
   canAddItem = true,
 }) {
   const items = section.items.map((item) => (
-    <Item
+    <SideItem
       key={item.id || item.value}
       item={item}
       isEditable={isEditable}

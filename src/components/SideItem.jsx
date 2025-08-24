@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-function Item({ item, isEditable, onChange, theme, hasField = false }) {
+function SideItem({ item, isEditable, onChange, theme, hasField = false }) {
   const handleChange = (e) => {
     onChange({ ...item, value: e.target.value });
   };
@@ -40,8 +40,8 @@ function Item({ item, isEditable, onChange, theme, hasField = false }) {
   );
 }
 
-export default Item;
-Item.propTypes = {
+export default SideItem;
+SideItem.propTypes = {
   item: PropTypes.object,
   isEditable: PropTypes.bool,
   onChange: PropTypes.func,

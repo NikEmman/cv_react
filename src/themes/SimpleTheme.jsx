@@ -1,8 +1,8 @@
 // import Section from "../Section";
 import PropTypes from "prop-types";
 import "./simpleTheme.css";
-import SideSection from "./SideSection";
-import MainSection from "./MainSection";
+import SideSection from "../components/SideSection";
+import MainSection from "../components/MainSection";
 
 export default function SimpleTheme({
   myData,
