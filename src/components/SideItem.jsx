@@ -21,7 +21,7 @@ function SideItem({ item, isEditable, onChange, theme, hasField = false }) {
     <li className={`li-${theme}`}>
       {isEditable ? (
         <div className="listItem">
-          {(item.field || hasField) && (
+          {item.field && hasField && (
             <input
               type="text"
               value={item.field}
@@ -32,7 +32,7 @@ function SideItem({ item, isEditable, onChange, theme, hasField = false }) {
         </div>
       ) : (
         <>
-          <span>{item.field} </span>
+          <span>{hasField && item.field} </span>
           <span>{item.value}</span>
         </>
       )}

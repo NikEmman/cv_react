@@ -10,6 +10,7 @@ export default function MainSection({
   handleRemoveItem,
   handleAddDescriptionItem,
   handleDeleteDescriptionItem,
+  theme,
 }) {
   const sectionItems = section.items.map((item) => (
     <MainItem
@@ -24,7 +25,9 @@ export default function MainSection({
   ));
   return (
     <div>
-      <div className="borderBottom flex alignItemsCenter justifyContentSpaceBetween">
+      <div
+        className={`borderBottom-${theme} flex alignItemsCenter justifyContentSpaceBetween`}
+      >
         <h3>{section.title}</h3>
 
         {isEditable && (
@@ -48,4 +51,5 @@ MainSection.propTypes = {
   handleRemoveItem: PropTypes.func,
   handleAddDescriptionItem: PropTypes.func,
   handleDeleteDescriptionItem: PropTypes.func,
+  theme: PropTypes.string,
 };

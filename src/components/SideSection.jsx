@@ -9,6 +9,8 @@ export default function SideSection({
   handleAddItem,
   handleRemoveItem,
   canAddItem = true,
+  hasField = false,
+  theme,
 }) {
   const items = section.items.map((item) => (
     <SideItem
@@ -16,12 +18,15 @@ export default function SideSection({
       item={item}
       isEditable={isEditable}
       onChange={handleItemChange}
+      hasField={hasField}
     />
   ));
 
   return (
     <div>
-      <div className="borderBottom flex alignItemsCenter justifyContentSpaceBetween">
+      <div
+        className={`borderBottom-${theme} flex alignItemsCenter justifyContentSpaceBetween`}
+      >
         <h3>{section.title}</h3>
         {isEditable && canAddItem && (
           <AddRemoveButtons
@@ -45,4 +50,6 @@ SideSection.propTypes = {
   handleAddItem: PropTypes.func,
   handleRemoveItem: PropTypes.func,
   canAddItem: PropTypes.bool,
+  hasField: PropTypes.bool,
+  theme: PropTypes.string,
 };

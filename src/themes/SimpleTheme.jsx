@@ -35,6 +35,7 @@ export default function SimpleTheme({
         handleRemoveItem={handleRemoveItem}
         handleAddDescriptionItem={handleAddDescriptionItem}
         handleDeleteDescriptionItem={handleDeleteDescriptionItem}
+        theme={theme}
       ></MainSection>
     ));
 
@@ -73,7 +74,7 @@ export default function SimpleTheme({
             </>
           )}
         </div>
-        <div className="mainContainer">
+        <div className={`mainContainer-${theme}`}>
           <main>
             <SideSection
               key={aboutSection.id}
@@ -84,6 +85,7 @@ export default function SimpleTheme({
               handleAddItem={handleAddItem}
               handleRemoveItem={handleRemoveItem}
               canAddItem={false}
+              theme={theme}
             ></SideSection>
             {mainItems}
           </main>
@@ -97,6 +99,7 @@ export default function SimpleTheme({
               handleAddItem={handleAddItem}
               handleRemoveItem={handleRemoveItem}
               hasField={true}
+              theme={theme}
             ></SideSection>
             <SideSection
               key={skillSection.id}
@@ -106,6 +109,7 @@ export default function SimpleTheme({
               handleItemChange={handleItemChange}
               handleAddItem={handleAddItem}
               handleRemoveItem={handleRemoveItem}
+              theme={theme}
             ></SideSection>
             <SideSection
               key={languageSection.id}
@@ -115,6 +119,7 @@ export default function SimpleTheme({
               handleItemChange={handleItemChange}
               handleAddItem={handleAddItem}
               handleRemoveItem={handleRemoveItem}
+              theme={theme}
             ></SideSection>
           </aside>
         </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import defaultData from "./data";
 import "./App.css";
 import SimpleTheme from "./themes/SimpleTheme";
+import MonoPinkTheme from "./themes/MonoPink";
 
 function App() {
   const [isEditable, setIsEditable] = useState(false);
@@ -157,6 +158,9 @@ function App() {
     case "simple":
       ThemeComponent = SimpleTheme;
       break;
+    case "monoPink":
+      ThemeComponent = MonoPinkTheme;
+      break;
 
     default:
       ThemeComponent = function Default() {
@@ -174,7 +178,9 @@ function App() {
         )}
         <select name="theme" onChange={(e) => setTheme(e.target.value)}>
           <option value="simple">Simple</option>
-          <option value="modern">Modern</option>
+          <option selected value="monoPink">
+            MonoPink
+          </option>
         </select>
         <button onClick={window.print}>Print</button>
       </header>
