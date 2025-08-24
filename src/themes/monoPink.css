@@ -5,4 +5,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.hero-monoPink h1,
+.hero-monoPink h2,
+.hero-monoPink h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.hero-monoPink h3,
+.sectionTitle-monoPink {
+  color: #df1d71;
 }

@@ -34,6 +34,7 @@ export default function MonoPinkTheme({
         handleRemoveItem={handleRemoveItem}
         handleAddDescriptionItem={handleAddDescriptionItem}
         handleDeleteDescriptionItem={handleDeleteDescriptionItem}
+        theme={theme}
       ></MainSection>
     ));
 
@@ -82,6 +83,7 @@ export default function MonoPinkTheme({
             handleAddItem={handleAddItem}
             handleRemoveItem={handleRemoveItem}
             hasField={false}
+            theme={theme}
           ></SideSection>
           <SideSection
             key={aboutSection.id}
@@ -92,6 +94,7 @@ export default function MonoPinkTheme({
             handleAddItem={handleAddItem}
             handleRemoveItem={handleRemoveItem}
             canAddItem={false}
+            theme={theme}
           ></SideSection>
           {mainItems}
 
@@ -103,6 +106,7 @@ export default function MonoPinkTheme({
             handleItemChange={handleItemChange}
             handleAddItem={handleAddItem}
             handleRemoveItem={handleRemoveItem}
+            theme={theme}
           ></SideSection>
           <SideSection
             key={languageSection.id}
@@ -112,6 +116,7 @@ export default function MonoPinkTheme({
             handleItemChange={handleItemChange}
             handleAddItem={handleAddItem}
             handleRemoveItem={handleRemoveItem}
+            theme={theme}
           ></SideSection>
         </div>
       </div>

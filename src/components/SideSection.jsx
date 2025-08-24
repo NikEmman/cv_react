@@ -27,7 +27,7 @@ export default function SideSection({
       <div
         className={`borderBottom-${theme} flex alignItemsCenter justifyContentSpaceBetween`}
       >
-        <h3>{section.title}</h3>
+        <h3 className={`sectionTitle-${theme}`}>{section.title}</h3>
         {isEditable && canAddItem && (
           <AddRemoveButtons
             onClickAdd={handleAddItem}

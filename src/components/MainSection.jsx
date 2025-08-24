@@ -28,7 +28,7 @@ export default function MainSection({
       <div
         className={`borderBottom-${theme} flex alignItemsCenter justifyContentSpaceBetween`}
       >
-        <h3>{section.title}</h3>
+        <h3 className={`sectionTitle-${theme}`}>{section.title}</h3>
 
         {isEditable && (
           <AddRemoveButtons
