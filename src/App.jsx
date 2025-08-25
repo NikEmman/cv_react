@@ -1,13 +1,13 @@
 import { useState } from "react";
 import defaultData from "./data";
 import "./App.css";
-import SimpleTheme from "./themes/SimpleTheme";
-import MonoPinkTheme from "./themes/MonoPink";
-
+import Simple from "./themes/Simple";
+import MonoPink from "./themes/MonoPink";
+import Tech from "./themes/Tech";
 function App() {
   const [isEditable, setIsEditable] = useState(false);
   const [myData, setMyData] = useState(defaultData);
-  const [theme, setTheme] = useState("monoPink");
+  const [theme, setTheme] = useState("tech");
 
   const handleEditClick = () => setIsEditable(true);
   const handleSaveClick = () => {
@@ -70,7 +70,7 @@ function App() {
 
           return {
             ...item,
-            desc: item.desc.slice(0, -1), // Remove last item
+            desc: item.desc.slice(0, -1),
           };
         });
 
@@ -156,10 +156,13 @@ function App() {
   let ThemeComponent;
   switch (theme) {
     case "simple":
-      ThemeComponent = SimpleTheme;
+      ThemeComponent = Simple;
       break;
     case "monoPink":
-      ThemeComponent = MonoPinkTheme;
+      ThemeComponent = MonoPink;
+      break;
+    case "tech":
+      ThemeComponent = Tech;
       break;
 
     default:
@@ -177,12 +180,13 @@ function App() {
           <button onClick={handleEditClick}>Edit</button>
         )}
         <select
-          defaultValue={"monoPink"}
+          defaultValue={"tech"}
           name="theme"
           onChange={(e) => setTheme(e.target.value)}
         >
           <option value="simple">Simple</option>
           <option value="monoPink">MonoPink</option>
+          <option value="tech">Tech</option>
         </select>
         <button onClick={window.print}>Print</button>
       </header>

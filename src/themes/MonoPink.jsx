@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import MainSection from "../components/MainSection";
 import SideSection from "../components/SideSection";
 
-export default function MonoPinkTheme({
+export default function MonoPink({
   myData,
   isEditable,
   theme,
@@ -128,7 +128,7 @@ export default function MonoPinkTheme({
   );
 }
 
-MonoPinkTheme.propTypes = {
+MonoPink.propTypes = {
   isEditable: PropTypes.bool,
   handleNameChange: PropTypes.func,
   myData: PropTypes.object,

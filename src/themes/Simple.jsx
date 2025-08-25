@@ -1,10 +1,10 @@
 // import Section from "../Section";
 import PropTypes from "prop-types";
-import "./simpleTheme.css";
+import "./simple.css";
 import SideSection from "../components/SideSection";
 import MainSection from "../components/MainSection";
 
-export default function SimpleTheme({
+export default function Simple({
   myData,
   isEditable,
   theme,
@@ -128,7 +128,7 @@ export default function SimpleTheme({
   );
 }
 
-SimpleTheme.propTypes = {
+Simple.propTypes = {
   isEditable: PropTypes.bool,
   handleNameChange: PropTypes.func,
   myData: PropTypes.object,
