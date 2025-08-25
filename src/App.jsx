@@ -7,7 +7,7 @@ import MonoPinkTheme from "./themes/MonoPink";
 function App() {
   const [isEditable, setIsEditable] = useState(false);
   const [myData, setMyData] = useState(defaultData);
-  const [theme, setTheme] = useState("simple");
+  const [theme, setTheme] = useState("monoPink");
 
   const handleEditClick = () => setIsEditable(true);
   const handleSaveClick = () => {
