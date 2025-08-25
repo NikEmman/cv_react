@@ -85,7 +85,7 @@ export default function MonoPinkTheme({
             hasField={false}
             theme={theme}
             visible={false}
-            special={["ul-monoPink", "flex", "flexEnd"]} // Add any special classes you want here
+            special={["ul-monoPink", "flex", "flexEnd"]}
           ></SideSection>
           <SideSection
             key={aboutSection.id}
@@ -109,6 +109,7 @@ export default function MonoPinkTheme({
             handleAddItem={handleAddItem}
             handleRemoveItem={handleRemoveItem}
             theme={theme}
+            special={["grid-repeat"]}
           ></SideSection>
           <SideSection
             key={languageSection.id}
@@ -119,6 +120,7 @@ export default function MonoPinkTheme({
             handleAddItem={handleAddItem}
             handleRemoveItem={handleRemoveItem}
             theme={theme}
+            special={["grid-repeat"]}
           ></SideSection>
         </div>
       </div>

@@ -9,6 +9,7 @@ export default function MainItem({
   handleAddDescriptionItem,
   handleDeleteDescriptionItem,
   buttonTitle,
+  theme,
 }) {
   const handleFieldChange = (field) => (e) => {
     handleItemChange({ ...item, [field]: e.target.value });
@@ -21,11 +22,16 @@ export default function MainItem({
   };
 
   const itemDescriptions =
-    item.desc && item.desc.map((desc, index) => <li key={index}>{desc}</li>);
+    item.desc &&
+    item.desc.map((desc, index) => (
+      <li className={`li-${theme}`} key={index}>
+        {desc}
+      </li>
+    ));
   const itemDescriptionsEditable =
     item.desc &&
     item.desc.map((desc, index) => (
-      <li key={index}>
+      <li className={`li-${theme}`} key={index}>
         <input
           placeholder="Thing you accomplished"
           value={desc}
@@ -108,4 +114,5 @@ MainItem.propTypes = {
   handleAddDescriptionItem: PropTypes.func,
   handleDeleteDescriptionItem: PropTypes.func,
   buttonTitle: PropTypes.string,
+  theme: PropTypes.string,
 };

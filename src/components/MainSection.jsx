@@ -21,6 +21,7 @@ export default function MainSection({
       handleAddDescriptionItem={handleAddDescriptionItem}
       handleDeleteDescriptionItem={handleDeleteDescriptionItem}
       buttonTitle={section.title}
+      theme={theme}
     ></MainItem>
   ));
   return (
@@ -37,6 +38,7 @@ export default function MainSection({
             buttonTitle={section.title}
           />
         )}
+        <hr />
       </div>
 
       {sectionItems}

@@ -44,6 +44,10 @@ button:focus-visible {
   width: 21cm;
   height: 29.7cm;
 }
+.grid-repeat {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 @media print {
   button,
   select {

@@ -12,7 +12,7 @@ export default function SideSection({
   hasField = false,
   theme,
   visible = true,
-  special = "",
+  special = [""],
 }) {
   const items = section.items.map((item) => (
     <SideItem
@@ -41,6 +41,7 @@ export default function SideSection({
             buttonTitle={section.title}
           />
         )}
+        {visible && <hr />}
       </div>
       <ul className={`${noListStyle} ${special[0]}`}>{items}</ul>
     </div>
