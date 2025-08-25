@@ -40,7 +40,7 @@ export default function MonoPinkTheme({
 
   return (
     <div className={`body-${theme}`}>
-      <div className={`container-${theme}`}>
+      <div className="container">
         <div className={`hero-${theme}`}>
           {isEditable ? (
             <>
@@ -84,6 +84,8 @@ export default function MonoPinkTheme({
             handleRemoveItem={handleRemoveItem}
             hasField={false}
             theme={theme}
+            visible={false}
+            special={["ul-monoPink", "flex", "flexEnd"]} // Add any special classes you want here
           ></SideSection>
           <SideSection
             key={aboutSection.id}

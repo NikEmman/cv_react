@@ -176,11 +176,13 @@ function App() {
         ) : (
           <button onClick={handleEditClick}>Edit</button>
         )}
-        <select name="theme" onChange={(e) => setTheme(e.target.value)}>
+        <select
+          defaultValue={"monoPink"}
+          name="theme"
+          onChange={(e) => setTheme(e.target.value)}
+        >
           <option value="simple">Simple</option>
-          <option selected value="monoPink">
-            MonoPink
-          </option>
+          <option value="monoPink">MonoPink</option>
         </select>
         <button onClick={window.print}>Print</button>
       </header>

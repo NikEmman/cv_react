@@ -9,13 +9,36 @@
 }
 
 .hero-monoPink h1,
-.hero-monoPink h2,
-.hero-monoPink h3 {
+.hero-monoPink h3,
+.sectionTitle-monoPink {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-}
-.hero-monoPink h3,
-.sectionTitle-monoPink {
   color: #df1d71;
+}
+
+.hero-monoPink h4 {
+  font-weight: 300;
+  font-size: 2em;
+}
+.hero-monoPink > h3 {
+  font-size: 3.5em;
+}
+.ul-monoPink {
+  width: 30%;
+}
+
+.ul-monoPink li {
+  border-bottom: #df1d71 1px solid;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.ul-monoPink li:last-child {
+  border-bottom: none;
+}
+.ul-monoPink {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }

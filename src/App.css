@@ -31,11 +31,18 @@ button:focus-visible {
 .flex {
   display: flex;
 }
+.flexEnd {
+  justify-content: end;
+}
 .alignItemsCenter {
   align-items: center;
 }
 .justifyContentSpaceBetween {
   justify-content: space-between;
+}
+.container {
+  width: 21cm;
+  height: 29.7cm;
 }
 @media print {
   button,

@@ -11,6 +11,8 @@ export default function SideSection({
   canAddItem = true,
   hasField = false,
   theme,
+  visible = true,
+  special = "",
 }) {
   const items = section.items.map((item) => (
     <SideItem
@@ -19,15 +21,18 @@ export default function SideSection({
       isEditable={isEditable}
       onChange={handleItemChange}
       hasField={hasField}
+      theme={theme}
     />
   ));
 
   return (
-    <div>
+    <div className={`${special[1]} ${special[2]}`}>
       <div
         className={`borderBottom-${theme} flex alignItemsCenter justifyContentSpaceBetween`}
       >
-        <h3 className={`sectionTitle-${theme}`}>{section.title}</h3>
+        {visible && (
+          <h3 className={`sectionTitle-${theme}`}>{section.title}</h3>
+        )}
         {isEditable && canAddItem && (
           <AddRemoveButtons
             onClickAdd={handleAddItem}
@@ -37,7 +42,7 @@ export default function SideSection({
           />
         )}
       </div>
-      <ul className={`${noListStyle}`}>{items}</ul>
+      <ul className={`${noListStyle} ${special[0]}`}>{items}</ul>
     </div>
   );
 }
@@ -52,4 +57,6 @@ SideSection.propTypes = {
   canAddItem: PropTypes.bool,
   hasField: PropTypes.bool,
   theme: PropTypes.string,
+  visible: PropTypes.bool,
+  special: PropTypes.arrayOf(PropTypes.string),
 };

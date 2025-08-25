@@ -41,7 +41,7 @@ export default function SimpleTheme({
 
   return (
     <div className={`body-${theme}`}>
-      <div className={`container-${theme}`}>
+      <div className="container">
         <div className={`hero-${theme}`}>
           {isEditable ? (
             <>
