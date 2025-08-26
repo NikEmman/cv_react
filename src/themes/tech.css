@@ -23,6 +23,24 @@
   flex-direction: column;
   align-items: end;
 }
+.mainContainer-tech {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+.mainContainer-tech > div {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+.mainContainer-tech main {
+  grid-column: 1;
+  grid-row: 2;
+}
+.mainContainer-tech aside {
+  grid-column: 2;
+  grid-row: 2;
+}
 aside .borderBottom-tech,
 main .borderBottom-tech {
   border-bottom: 2px solid black;
@@ -31,6 +49,7 @@ footer {
   text-transform: uppercase;
   font-size: 2.5em;
   font-weight: 300;
+  padding-top: 10px;
 }
 footer h4::before {
   content: "</";

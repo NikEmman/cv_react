@@ -9,6 +9,7 @@ export default function MainSection({
   handleAddMainItem,
   handleRemoveItem,
   handleAddDescriptionItem,
+  noListStyle,
   handleDeleteDescriptionItem,
   theme,
 }) {
@@ -22,6 +23,7 @@ export default function MainSection({
       handleDeleteDescriptionItem={handleDeleteDescriptionItem}
       buttonTitle={section.title}
       theme={theme}
+      noListStyle={noListStyle}
     ></MainItem>
   ));
   return (
@@ -54,4 +56,5 @@ MainSection.propTypes = {
   handleAddDescriptionItem: PropTypes.func,
   handleDeleteDescriptionItem: PropTypes.func,
   theme: PropTypes.string,
+  noListStyle: PropTypes.string,
 };

@@ -22,21 +22,12 @@ export default function Tech({
     (sec) => sec.title == "Languages"
   );
   const aboutSection = myData.sections.find((sec) => sec.title == "About Me");
-  const mainItems = myData.sections
-    .filter((sec) => sec.title == "Work experience" || sec.title == "Education")
-    .map((sec) => (
-      <MainSection
-        key={sec.id}
-        section={sec}
-        isEditable={isEditable}
-        handleItemChange={handleItemChange}
-        handleAddMainItem={handleAddMainItem}
-        handleRemoveItem={handleRemoveItem}
-        handleAddDescriptionItem={handleAddDescriptionItem}
-        handleDeleteDescriptionItem={handleDeleteDescriptionItem}
-        theme={theme}
-      ></MainSection>
-    ));
+  const workSection = myData.sections.find(
+    (sec) => sec.title == "Work experience"
+  );
+  const educationSection = myData.sections.find(
+    (sec) => sec.title == "Education"
+  );
 
   return (
     <div className={`body-${theme}`}>
@@ -82,22 +73,47 @@ export default function Tech({
           )}
         </div>
         <div className={`mainContainer-${theme}`}>
+          <SideSection
+            key={aboutSection.id}
+            section={aboutSection}
+            isEditable={isEditable}
+            noListStyle={"noListStyle"}
+            handleItemChange={handleItemChange}
+            handleAddItem={handleAddItem}
+            handleRemoveItem={handleRemoveItem}
+            canAddItem={false}
+            visible={false}
+            theme={theme}
+          ></SideSection>
+
           <main>
-            <SideSection
-              key={aboutSection.id}
-              section={aboutSection}
+            <MainSection
+              key={workSection.id}
+              section={workSection}
               isEditable={isEditable}
-              noListStyle={"noListStyle"}
               handleItemChange={handleItemChange}
-              handleAddItem={handleAddItem}
+              handleAddMainItem={handleAddMainItem}
               handleRemoveItem={handleRemoveItem}
-              canAddItem={false}
-              visible={false}
+              handleAddDescriptionItem={handleAddDescriptionItem}
+              handleDeleteDescriptionItem={handleDeleteDescriptionItem}
               theme={theme}
-            ></SideSection>
-            {mainItems}
+              noListStyle={"noListStyle"}
+            ></MainSection>
           </main>
           <aside>
+            <MainSection
+              key={educationSection.id}
+              section={educationSection}
+              isEditable={isEditable}
+              handleItemChange={handleItemChange}
+              handleAddMainItem={handleAddMainItem}
+              handleRemoveItem={handleRemoveItem}
+              handleAddDescriptionItem={handleAddDescriptionItem}
+              handleDeleteDescriptionItem={handleDeleteDescriptionItem}
+              theme={theme}
+              noListStyle={"noListStyle"}
+            ></MainSection>
+
             <SideSection
               key={skillSection.id}
               section={skillSection}

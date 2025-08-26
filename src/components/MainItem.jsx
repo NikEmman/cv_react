@@ -10,6 +10,7 @@ export default function MainItem({
   handleDeleteDescriptionItem,
   buttonTitle,
   theme,
+  noListStyle = "",
 }) {
   const handleFieldChange = (field) => (e) => {
     handleItemChange({ ...item, [field]: e.target.value });
@@ -101,7 +102,7 @@ export default function MainItem({
             </div>
           </div>
           <p>{item.title}</p>
-          <ul>{itemDescriptions}</ul>
+          <ul className={noListStyle}>{itemDescriptions}</ul>
         </>
       )}
     </>
@@ -115,4 +116,5 @@ MainItem.propTypes = {
   handleDeleteDescriptionItem: PropTypes.func,
   buttonTitle: PropTypes.string,
   theme: PropTypes.string,
+  noListStyle: PropTypes.string,
 };

@@ -95,6 +95,7 @@ function App() {
           institution: "",
           from: "",
           until: "",
+          desc: [""],
         };
 
         return {
