@@ -8,14 +8,17 @@
   justify-content: space-between;
   gap: 1em;
 }
-.hero-tech h3 {
+.hero-tech h3,
+.name input {
   text-transform: uppercase;
   font-size: 3.5em;
 }
-.name h3:first-child::before {
+.name h3:first-child::before,
+.name input:first-child::before {
   content: "<";
 }
-.hero-tech h3:last-child::after {
+.hero-tech h3:last-child::after,
+.name input:last-child::after {
   content: ">";
 }
 .ul-tech {
@@ -45,12 +48,14 @@ aside .borderBottom-tech,
 main .borderBottom-tech {
   border-bottom: 2px solid black;
 }
-footer {
+footer,
+footer input {
   text-transform: uppercase;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   font-weight: 300;
   padding-top: 10px;
 }
+
 footer h4::before {
   content: "</";
 }

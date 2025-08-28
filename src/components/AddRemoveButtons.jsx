@@ -28,6 +28,6 @@ export default function AddRemoveButtons({
 AddRemoveButtons.propTypes = {
   onClickAdd: PropTypes.func.isRequired,
   onClickRemove: PropTypes.func.isRequired,
-  sectionId: PropTypes.string.isRequired,
+  sectionId: PropTypes.number,
   buttonTitle: PropTypes.string,
 };

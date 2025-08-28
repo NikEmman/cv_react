@@ -35,7 +35,7 @@ export default function Tech({
         <div className={`hero-${theme}`}>
           {isEditable ? (
             <>
-              <div>
+              <div className="name">
                 <input
                   placeholder="First Name"
                   value={personalSection.firstName}
@@ -56,21 +56,21 @@ export default function Tech({
                 <h3>{personalSection.firstName}</h3>
                 <h3> {personalSection.lastName}</h3>
               </div>
-              <SideSection
-                key={contactSection.id}
-                section={contactSection}
-                isEditable={isEditable}
-                noListStyle={"noListStyle"}
-                handleItemChange={handleItemChange}
-                handleAddItem={handleAddItem}
-                handleRemoveItem={handleRemoveItem}
-                hasField={false}
-                theme={theme}
-                visible={false}
-                special={["ul-tech"]}
-              ></SideSection>
             </>
           )}
+          <SideSection
+            key={contactSection.id}
+            section={contactSection}
+            isEditable={isEditable}
+            noListStyle={"noListStyle"}
+            handleItemChange={handleItemChange}
+            handleAddItem={handleAddItem}
+            handleRemoveItem={handleRemoveItem}
+            hasField={false}
+            theme={theme}
+            visible={false}
+            special={["ul-tech"]}
+          ></SideSection>
         </div>
         <div className={`mainContainer-${theme}`}>
           <SideSection

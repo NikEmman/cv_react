@@ -52,6 +52,7 @@ export default function MainItem({
                 value={item.institution}
                 placeholder="Institution name"
                 onChange={handleFieldChange("institution")}
+                className="bold"
               />
             </h4>
 
