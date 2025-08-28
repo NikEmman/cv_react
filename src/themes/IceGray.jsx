@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import "./simple.css";
+import "./iceGray.css";
 import SideSection from "../components/SideSection";
 import MainSection from "../components/MainSection";
 
-export default function Simple({
+export default function IceGray({
   myData,
   isEditable,
   theme,
@@ -127,7 +127,7 @@ export default function Simple({
   );
 }
 
-Simple.propTypes = {
+IceGray.propTypes = {
   isEditable: PropTypes.bool,
   handleNameChange: PropTypes.func,
   myData: PropTypes.object,

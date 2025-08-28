@@ -4,6 +4,8 @@ import "./App.css";
 import Simple from "./themes/Simple";
 import MonoPink from "./themes/MonoPink";
 import Tech from "./themes/Tech";
+import Woodland from "./themes/Woodland";
+import IceGray from "./themes/IceGray";
 function App() {
   const [isEditable, setIsEditable] = useState(false);
   const [myData, setMyData] = useState(defaultData);
@@ -165,6 +167,12 @@ function App() {
     case "tech":
       ThemeComponent = Tech;
       break;
+    case "iceGray":
+      ThemeComponent = IceGray;
+      break;
+    case "woodland":
+      ThemeComponent = Woodland;
+      break;
 
     default:
       ThemeComponent = function Default() {
@@ -188,6 +196,8 @@ function App() {
           <option value="simple">Simple</option>
           <option value="monoPink">MonoPink</option>
           <option value="tech">Tech</option>
+          <option value="iceGray">IceGray</option>
+          <option value="woodland">Woodland</option>
         </select>
         <button onClick={window.print}>Print</button>
       </header>
