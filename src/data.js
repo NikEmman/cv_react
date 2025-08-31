@@ -90,6 +90,7 @@ const defaultData = {
         { id: 702, field: "", value: "Mongolian (native)" },
       ],
     },
+    { id: 800, title: "Photo", url: "/default_avatar.jpg" },
   ],
 };
 

@@ -9,7 +9,7 @@ import IceGray from "./themes/IceGray";
 function App() {
   const [isEditable, setIsEditable] = useState(false);
   const [myData, setMyData] = useState(defaultData);
-  const [theme, setTheme] = useState("tech");
+  const [theme, setTheme] = useState("iceGray");
 
   const handleEditClick = () => setIsEditable(true);
   const handleSaveClick = () => {
@@ -129,6 +129,25 @@ function App() {
       return { ...prevData, sections: updatedSections };
     });
   };
+  const handleAddPhoto = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const imageUrl = reader.result;
+
+      setMyData((prevData) => {
+        const updatedSections = prevData.sections.map((section) =>
+          section.title === "Photo" ? { ...section, url: imageUrl } : section
+        );
+
+        return { ...prevData, sections: updatedSections };
+      });
+    };
+
+    reader.readAsDataURL(file);
+  };
 
   const handleNameChange = (fieldName, newValue) => {
     setMyData((prevData) => {
@@ -189,7 +208,7 @@ function App() {
           <button onClick={handleEditClick}>Edit</button>
         )}
         <select
-          defaultValue={"tech"}
+          defaultValue={"iceGray"}
           name="theme"
           onChange={(e) => setTheme(e.target.value)}
         >
@@ -213,6 +232,7 @@ function App() {
         handleAddMainItem={handleAddMainItem}
         handleAddDescriptionItem={handleAddDescriptionItem}
         handleDeleteDescriptionItem={handleDeleteDescriptionItem}
+        handleAddPhoto={handleAddPhoto}
       />
     </>
   );

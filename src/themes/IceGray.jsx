@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import "./iceGray.css";
 import SideSection from "../components/SideSection";
 import MainSection from "../components/MainSection";
+import Photo from "../components/Photo";
 
 export default function IceGray({
   myData,
@@ -14,6 +15,7 @@ export default function IceGray({
   handleAddMainItem,
   handleAddDescriptionItem,
   handleDeleteDescriptionItem,
+  handleAddPhoto,
 }) {
   const personalSection = myData.sections.find((sec) => sec.title == "Person");
   const contactSection = myData.sections.find((sec) => sec.title == "Contact");
@@ -21,6 +23,8 @@ export default function IceGray({
   const languageSection = myData.sections.find(
     (sec) => sec.title == "Languages"
   );
+  const photoSection = myData.sections.find((sec) => sec.title == "Photo");
+
   const aboutSection = myData.sections.find((sec) => sec.title == "About Me");
   const mainItems = myData.sections
     .filter((sec) => sec.title == "Work experience" || sec.title == "Education")
@@ -42,6 +46,13 @@ export default function IceGray({
     <div className={`body-${theme}`}>
       <div className="container">
         <div className={`hero-${theme}`}>
+          <Photo
+            photo={photoSection}
+            theme={theme}
+            isEditable={isEditable}
+            handleAddPhoto={handleAddPhoto}
+          ></Photo>
+
           {isEditable ? (
             <>
               <div>
@@ -138,4 +149,5 @@ IceGray.propTypes = {
   handleAddMainItem: PropTypes.func,
   handleAddDescriptionItem: PropTypes.func,
   handleDeleteDescriptionItem: PropTypes.func,
+  handleAddPhoto: PropTypes.func,
 };
