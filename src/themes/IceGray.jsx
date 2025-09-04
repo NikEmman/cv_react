@@ -26,21 +26,12 @@ export default function IceGray({
   const photoSection = myData.sections.find((sec) => sec.title == "Photo");
 
   const aboutSection = myData.sections.find((sec) => sec.title == "About Me");
-  const mainItems = myData.sections
-    .filter((sec) => sec.title == "Work experience" || sec.title == "Education")
-    .map((sec) => (
-      <MainSection
-        key={sec.id}
-        section={sec}
-        isEditable={isEditable}
-        handleItemChange={handleItemChange}
-        handleAddMainItem={handleAddMainItem}
-        handleRemoveItem={handleRemoveItem}
-        handleAddDescriptionItem={handleAddDescriptionItem}
-        handleDeleteDescriptionItem={handleDeleteDescriptionItem}
-        theme={theme}
-      ></MainSection>
-    ));
+  const workSection = myData.sections.find(
+    (sec) => sec.title == "Work experience"
+  );
+  const educationSection = myData.sections.find(
+    (sec) => sec.title == "Education"
+  );
 
   return (
     <div className={`body-${theme}`}>
@@ -68,20 +59,20 @@ export default function IceGray({
                   value={personalSection.lastName}
                   onChange={(e) => handleNameChange("lastName", e.target.value)}
                 />
+                <input
+                  placeholder="Job Title"
+                  value={personalSection.jobTitle}
+                  onChange={(e) => handleNameChange("jobTitle", e.target.value)}
+                />
               </div>
-              <input
-                placeholder="Job Title"
-                value={personalSection.jobTitle}
-                onChange={(e) => handleNameChange("jobTitle", e.target.value)}
-              />
             </>
           ) : (
-            <>
+            <div>
               <h3>
                 {personalSection.firstName + " " + personalSection.lastName}
               </h3>
               <h4>{personalSection.jobTitle}</h4>
-            </>
+            </div>
           )}
         </div>
         <div className={`mainContainer-${theme}`}>
@@ -97,7 +88,18 @@ export default function IceGray({
               canAddItem={false}
               theme={theme}
             ></SideSection>
-            {mainItems}
+            <MainSection
+              key={workSection.id}
+              section={workSection}
+              isEditable={isEditable}
+              handleItemChange={handleItemChange}
+              handleAddMainItem={handleAddMainItem}
+              handleRemoveItem={handleRemoveItem}
+              handleAddDescriptionItem={handleAddDescriptionItem}
+              handleDeleteDescriptionItem={handleDeleteDescriptionItem}
+              theme={theme}
+              noListStyle={"noListStyle"}
+            ></MainSection>
           </main>
           <aside>
             <SideSection
@@ -109,8 +111,22 @@ export default function IceGray({
               handleAddItem={handleAddItem}
               handleRemoveItem={handleRemoveItem}
               hasField={true}
+              visible={false}
               theme={theme}
             ></SideSection>
+            <MainSection
+              key={educationSection.id}
+              section={educationSection}
+              isEditable={isEditable}
+              handleItemChange={handleItemChange}
+              handleAddMainItem={handleAddMainItem}
+              handleRemoveItem={handleRemoveItem}
+              handleAddDescriptionItem={handleAddDescriptionItem}
+              handleDeleteDescriptionItem={handleDeleteDescriptionItem}
+              theme={theme}
+              noListStyle={"noListStyle"}
+            ></MainSection>
+
             <SideSection
               key={skillSection.id}
               section={skillSection}

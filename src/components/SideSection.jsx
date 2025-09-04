@@ -28,7 +28,11 @@ export default function SideSection({
   return (
     <div className={`${special[1]} ${special[2]}`}>
       <div
-        className={`borderBottom-${theme} flex alignItemsCenter justifyContentSpaceBetween`}
+        className={
+          visible &&
+          `borderBottom-${theme} ` +
+            `flex alignItemsCenter justifyContentSpaceBetween`
+        }
       >
         {visible && (
           <h3 className={`sectionTitle-${theme}`}>{section.title}</h3>
