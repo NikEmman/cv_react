@@ -2,3 +2,9 @@
   display: flex;
   justify-content: center;
 }
+.body-woodland img {
+  width: 250px;
+  height: 250px;
+  border: 20px solid #b79674;
+  border-radius: 100%;
+}
