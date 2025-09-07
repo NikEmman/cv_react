@@ -38,6 +38,61 @@ export default function Woodland({
     <div className={`body-${theme}`}>
       <div className="container">
         <div className={`mainContainer-${theme}`}>
+          <aside>
+            <Photo
+              photo={photoSection}
+              theme={theme}
+              isEditable={isEditable}
+              handleAddPhoto={handleAddPhoto}
+            ></Photo>
+
+            <SideSection
+              key={contactSection.id}
+              section={contactSection}
+              isEditable={isEditable}
+              noListStyle={"noListStyle"}
+              handleItemChange={handleItemChange}
+              handleAddItem={handleAddItem}
+              handleRemoveItem={handleRemoveItem}
+              hasField={true}
+              visible={false}
+              theme={theme}
+            ></SideSection>
+            <MainSection
+              key={educationSection.id}
+              section={educationSection}
+              isEditable={isEditable}
+              handleItemChange={handleItemChange}
+              handleAddMainItem={handleAddMainItem}
+              handleRemoveItem={handleRemoveItem}
+              handleAddDescriptionItem={handleAddDescriptionItem}
+              handleDeleteDescriptionItem={handleDeleteDescriptionItem}
+              theme={theme}
+              noListStyle={"noListStyle"}
+            ></MainSection>
+
+            <SideSection
+              key={skillSection.id}
+              section={skillSection}
+              isEditable={isEditable}
+              noListStyle={""}
+              handleItemChange={handleItemChange}
+              handleAddItem={handleAddItem}
+              handleRemoveItem={handleRemoveItem}
+              theme={theme}
+            ></SideSection>
+            <SideSection
+              key={languageSection.id}
+              section={languageSection}
+              isEditable={isEditable}
+              noListStyle={""}
+              handleItemChange={handleItemChange}
+              handleAddItem={handleAddItem}
+              handleRemoveItem={handleRemoveItem}
+              theme={theme}
+            ></SideSection>
+          </aside>
+
           <main>
             <div className={`hero-${theme}`}>
               {isEditable ? (
@@ -100,60 +155,6 @@ export default function Woodland({
               noListStyle={"noListStyle"}
             ></MainSection>
           </main>
-          <aside>
-            <Photo
-              photo={photoSection}
-              theme={theme}
-              isEditable={isEditable}
-              handleAddPhoto={handleAddPhoto}
-            ></Photo>
-
-            <SideSection
-              key={contactSection.id}
-              section={contactSection}
-              isEditable={isEditable}
-              noListStyle={"noListStyle"}
-              handleItemChange={handleItemChange}
-              handleAddItem={handleAddItem}
-              handleRemoveItem={handleRemoveItem}
-              hasField={true}
-              visible={false}
-              theme={theme}
-            ></SideSection>
-            <MainSection
-              key={educationSection.id}
-              section={educationSection}
-              isEditable={isEditable}
-              handleItemChange={handleItemChange}
-              handleAddMainItem={handleAddMainItem}
-              handleRemoveItem={handleRemoveItem}
-              handleAddDescriptionItem={handleAddDescriptionItem}
-              handleDeleteDescriptionItem={handleDeleteDescriptionItem}
-              theme={theme}
-              noListStyle={"noListStyle"}
-            ></MainSection>
-
-            <SideSection
-              key={skillSection.id}
-              section={skillSection}
-              isEditable={isEditable}
-              noListStyle={""}
-              handleItemChange={handleItemChange}
-              handleAddItem={handleAddItem}
-              handleRemoveItem={handleRemoveItem}
-              theme={theme}
-            ></SideSection>
-            <SideSection
-              key={languageSection.id}
-              section={languageSection}
-              isEditable={isEditable}
-              noListStyle={""}
-              handleItemChange={handleItemChange}
-              handleAddItem={handleAddItem}
-              handleRemoveItem={handleRemoveItem}
-              theme={theme}
-            ></SideSection>
-          </aside>
         </div>
       </div>
     </div>

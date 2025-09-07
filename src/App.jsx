@@ -9,7 +9,7 @@ import IceGray from "./themes/IceGray";
 function App() {
   const [isEditable, setIsEditable] = useState(false);
   const [myData, setMyData] = useState(defaultData);
-  const [theme, setTheme] = useState("iceGray");
+  const [theme, setTheme] = useState("woodland");
 
   const handleEditClick = () => setIsEditable(true);
   const handleSaveClick = () => {
@@ -208,7 +208,7 @@ function App() {
           <button onClick={handleEditClick}>Edit</button>
         )}
         <select
-          defaultValue={"iceGray"}
+          defaultValue={"woodland"}
           name="theme"
           onChange={(e) => setTheme(e.target.value)}
         >

@@ -73,24 +73,24 @@
   border-radius: 20px 20px 0 0;
   flex: 1;
 }
-aside .itemHeader {
+.mainContainer-iceGray aside .itemHeader {
   display: flex;
   flex-direction: column;
   order: 3;
 }
-.Education {
+.mainContainer-iceGray .Education {
   display: flex;
   flex-direction: column;
 }
-.Education p {
+.mainContainer-iceGray .Education p {
   order: 2;
   font-size: 1.5em;
 }
-.Education h4 {
+.mainContainer-iceGray .Education h4 {
   font-size: 0.8em;
   font-weight: 800;
 }
-.Education .itemDates {
+.mainContainer-iceGray .Education .itemDates {
   font-size: 0.8em;
 }
 .mainContainer-iceGray main {
