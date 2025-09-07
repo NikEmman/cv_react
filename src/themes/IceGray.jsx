@@ -141,7 +141,7 @@ export default function IceGray({
               key={languageSection.id}
               section={languageSection}
               isEditable={isEditable}
-              noListStyle={""}
+              noListStyle={"noListStyle"}
               handleItemChange={handleItemChange}
               handleAddItem={handleAddItem}
               handleRemoveItem={handleRemoveItem}

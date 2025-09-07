@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 export default function Photo({ photo, handleAddPhoto, isEditable, theme }) {
   return (
     <>
-      {isEditable && <input onChange={handleAddPhoto} type="file"></input>}
       <img
-        className={`img-${theme}`}
+        className={`img-${theme}` + " " + (isEditable && " small-img")}
         src={photo.url}
         alt="Personal Photo"
       ></img>
+      {isEditable && <input onChange={handleAddPhoto} type="file"></input>}
     </>
   );
 }

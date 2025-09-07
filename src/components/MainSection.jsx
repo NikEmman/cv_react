@@ -27,7 +27,7 @@ export default function MainSection({
     ></MainItem>
   ));
   return (
-    <div>
+    <div className={`${section.title}`}>
       <div
         className={`borderBottom-${theme} flex alignItemsCenter justifyContentSpaceBetween`}
       >

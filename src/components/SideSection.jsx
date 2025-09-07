@@ -12,7 +12,7 @@ export default function SideSection({
   hasField = false,
   theme,
   visible = true,
-  special = [""],
+  special = ["", "", ""],
 }) {
   const items = section.items.map((item) => (
     <SideItem
@@ -28,11 +28,9 @@ export default function SideSection({
   return (
     <div className={`${special[1]} ${special[2]}`}>
       <div
-        className={
-          visible &&
-          `borderBottom-${theme} ` +
-            `flex alignItemsCenter justifyContentSpaceBetween`
-        }
+        className={`flex alignItemsCenter justifyContentSpaceBetween ${
+          visible ? `borderBottom-${theme}` : ""
+        }`}
       >
         {visible && (
           <h3 className={`sectionTitle-${theme}`}>{section.title}</h3>
@@ -53,7 +51,6 @@ export default function SideSection({
 }
 SideSection.propTypes = {
   isEditable: PropTypes.bool,
-  handleNameChange: PropTypes.func,
   section: PropTypes.object,
   handleItemChange: PropTypes.func,
   noListStyle: PropTypes.string,
