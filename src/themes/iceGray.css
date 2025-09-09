@@ -100,3 +100,6 @@
 .borderBottom-iceGray {
   border-bottom: 2px solid black;
 }
+.body-iceGray li {
+  text-align: justify;
+}

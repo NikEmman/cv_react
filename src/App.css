@@ -47,6 +47,9 @@ button:hover {
 .bold {
   font-weight: 700;
 }
+textarea {
+  height: 7.5em;
+}
 @media print {
   button,
   select {

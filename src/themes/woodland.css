@@ -42,11 +42,12 @@
   text-transform: uppercase;
 }
 .lastName {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 700;
   font-size: 4.5rem;
   letter-spacing: 1px;
   color: #31615f;
+  text-transform: uppercase;
 }
 
 .sectionTitle-woodland {
@@ -79,4 +80,14 @@ main .sectionTitle-woodland {
 .body-woodland .education .itemHeader {
   display: flex;
   flex-direction: column;
+}
+.body-woodland input {
+  width: 100%;
+}
+.body-woodland .jobTitle {
+  font-family: "Syne", sans-serif;
+  font-weight: 200;
+}
+.body-woodland li {
+  text-align: justify;
 }
