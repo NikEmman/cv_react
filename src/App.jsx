@@ -39,8 +39,7 @@ function App() {
   const handleAddDescriptionItem = (itemId) => {
     setMyData((prevData) => {
       const updatedSections = prevData.sections.map((section) => {
-        if (section.title !== "Work experience" || !section.items)
-          return section;
+        if (!section.items) return section;
 
         const updatedItems = section.items.map((item) => {
           if (item.id !== itemId || !item.desc) return item;
@@ -63,8 +62,7 @@ function App() {
   const handleDeleteDescriptionItem = (itemId) => {
     setMyData((prevData) => {
       const updatedSections = prevData.sections.map((section) => {
-        if (section.title !== "Work experience" || !section.items)
-          return section;
+        if (!section.items) return section;
 
         const updatedItems = section.items.map((item) => {
           if (item.id !== itemId || !item.desc || item.desc.length === 0)

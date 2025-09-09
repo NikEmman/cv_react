@@ -26,7 +26,13 @@ export default function SideSection({
   ));
 
   return (
-    <div className={`${special[1]} ${special[2]}`}>
+    <div
+      className={
+        `${special[1]} ${special[2]}` +
+        " " +
+        `${section.title.trim().split(" ")[0].toLowerCase()}`
+      }
+    >
       <div
         className={`flex alignItemsCenter justifyContentSpaceBetween ${
           visible ? `borderBottom-${theme}` : ""

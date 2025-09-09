@@ -3,8 +3,8 @@
   justify-content: center;
 }
 .img-iceGray {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border: 20px solid white;
   border-radius: 100%;
   position: absolute;
@@ -41,7 +41,6 @@
   background-color: #d4dee6;
   height: 100%;
   width: 90%;
-
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -76,19 +75,21 @@
 .mainContainer-iceGray aside .itemHeader {
   display: flex;
   flex-direction: column;
-  order: 3;
 }
 .mainContainer-iceGray .education {
   display: flex;
   flex-direction: column;
 }
 .mainContainer-iceGray .education p {
-  order: 2;
   font-size: 1.5em;
 }
 .mainContainer-iceGray .education h4 {
   font-size: 0.8em;
   font-weight: 800;
+}
+.education .mainItem-iceGray {
+  display: flex;
+  flex-direction: column-reverse;
 }
 .mainContainer-iceGray .education .itemDates {
   font-size: 0.8em;
@@ -102,4 +103,14 @@
 }
 .body-iceGray li {
   text-align: justify;
+}
+.body-iceGray hr {
+  display: none;
+}
+.body-iceGray .skills li {
+  font-size: 0.8em;
+}
+.body-iceGray .borderBottom-iceGray {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }

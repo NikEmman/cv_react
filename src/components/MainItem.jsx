@@ -44,7 +44,7 @@ export default function MainItem({
   return (
     <>
       {isEditable ? (
-        <>
+        <div className={`mainItem-${theme}`}>
           <div className="itemHeader">
             <h4>
               <input
@@ -93,9 +93,9 @@ export default function MainItem({
             )}
             {itemDescriptionsEditable}
           </ul>
-        </>
+        </div>
       ) : (
-        <>
+        <div className={`mainItem-${theme}`}>
           <div className="itemHeader">
             <h4>{item.institution} </h4>
             <div className="itemDates">
@@ -104,7 +104,7 @@ export default function MainItem({
           </div>
           <p>{item.title}</p>
           <ul className={noListStyle}>{itemDescriptions}</ul>
-        </>
+        </div>
       )}
     </>
   );

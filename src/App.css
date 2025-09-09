@@ -38,7 +38,7 @@ button:hover {
 }
 .container {
   width: 21cm;
-  height: 29.7cm;
+  min-height: 29.7cm;
 }
 .grid-repeat {
   display: grid;
