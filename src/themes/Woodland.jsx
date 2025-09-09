@@ -55,7 +55,6 @@ export default function Woodland({
               handleAddItem={handleAddItem}
               handleRemoveItem={handleRemoveItem}
               hasField={true}
-              visible={false}
               theme={theme}
             ></SideSection>
             <MainSection
@@ -99,6 +98,7 @@ export default function Woodland({
                 <>
                   <div>
                     <input
+                      className="firstName"
                       placeholder="First Name"
                       value={personalSection.firstName}
                       onChange={(e) =>
@@ -107,6 +107,7 @@ export default function Woodland({
                     />
                     <input
                       placeholder="Last Name"
+                      className="lastName"
                       value={personalSection.lastName}
                       onChange={(e) =>
                         handleNameChange("lastName", e.target.value)
@@ -114,6 +115,7 @@ export default function Woodland({
                     />
                     <input
                       placeholder="Job Title"
+                      className="jobTitle"
                       value={personalSection.jobTitle}
                       onChange={(e) =>
                         handleNameChange("jobTitle", e.target.value)
@@ -123,10 +125,9 @@ export default function Woodland({
                 </>
               ) : (
                 <div>
-                  <h3>
-                    {personalSection.firstName + " " + personalSection.lastName}
-                  </h3>
-                  <h4>{personalSection.jobTitle}</h4>
+                  <h1 className="firstName">{personalSection.firstName}</h1>
+                  <h1 className="lastName">{personalSection.lastName}</h1>
+                  <h2 className="jobTitle">{personalSection.jobTitle}</h2>
                 </div>
               )}
             </div>

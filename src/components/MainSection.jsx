@@ -27,7 +27,7 @@ export default function MainSection({
     ></MainItem>
   ));
   return (
-    <div className={`${section.title}`}>
+    <div className={`${section.title.trim().split(" ")[0].toLowerCase()}`}>
       <div
         className={`borderBottom-${theme} flex alignItemsCenter justifyContentSpaceBetween`}
       >

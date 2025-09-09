@@ -78,19 +78,19 @@
   flex-direction: column;
   order: 3;
 }
-.mainContainer-iceGray .Education {
+.mainContainer-iceGray .education {
   display: flex;
   flex-direction: column;
 }
-.mainContainer-iceGray .Education p {
+.mainContainer-iceGray .education p {
   order: 2;
   font-size: 1.5em;
 }
-.mainContainer-iceGray .Education h4 {
+.mainContainer-iceGray .education h4 {
   font-size: 0.8em;
   font-weight: 800;
 }
-.mainContainer-iceGray .Education .itemDates {
+.mainContainer-iceGray .education .itemDates {
   font-size: 0.8em;
 }
 .mainContainer-iceGray main {
