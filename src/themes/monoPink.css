@@ -47,10 +47,59 @@
 }
 .body-monoPink input,
 .body-monoPink textarea {
-  font-style: italic;
-  border: 1px dashed #df1d71;
+  width: fit-content;
+  background-color: #ffe4ef;
   padding: 5px;
   border-radius: 5px;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  outline: none;
+}
+
+/* Name and job title inputs to match h3/h4 */
+.hero-monoPink input[placeholder="First Name"],
+.hero-monoPink input[placeholder="Last Name"] {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 900;
+  margin-right: 10px;
+  color: #d72660;
+}
+
+.hero-monoPink input[placeholder="Job Title"] {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* MainItem inputs */
+.mainItem-monoPink input {
+  font-weight: 500;
+  background: none;
+  background-color: #ffe4ef;
+  border: none;
+  padding: 2px 0;
+}
+
+.mainItem-monoPink input.bold {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.mainItem-monoPink .itemDates input {
+  font-size: 1rem;
+  font-weight: 500;
+  width: 80px;
+  margin: 0 2px;
+  color: #d72660;
+}
+
+.mainItem-monoPink input::placeholder {
+  color: #f7a1c4;
+  font-weight: 400;
 }
 .body-monoPink hr {
   color: #df1d71;

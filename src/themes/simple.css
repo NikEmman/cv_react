@@ -7,15 +7,6 @@
   align-items: center;
 }
 
-.body-simple input,
-.body-simple textarea {
-  background-color: #f0f0f0;
-  border: 1px dashed #000;
-  padding: 5px;
-
-  border-radius: 5px;
-}
-
 .container-simple {
   width: 21cm;
   height: 29.7cm;
@@ -72,4 +63,55 @@ li {
 }
 textarea {
   width: 100%;
+}
+.body-simple input,
+.body-simple textarea {
+  background-color: #f0f0f0;
+  border: none;
+
+  border-radius: 5px;
+  font-family: inherit;
+  color: inherit;
+  font-weight: 500;
+  outline: none;
+}
+
+/* Specific styles for name and job title inputs to match h3/h4 */
+.hero-simple input[placeholder="First Name"],
+.hero-simple input[placeholder="Last Name"] {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.hero-simple input[placeholder="Job Title"] {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* MainItem inputs */
+.mainItem-simple input {
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  padding: 2px 0;
+  color: inherit;
+}
+
+.mainItem-simple input.bold {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.mainItem-simple .itemDates input {
+  font-size: 1rem;
+  font-weight: 500;
+  width: 80px;
+  margin: 0 2px;
+}
+
+.mainItem-simple input::placeholder {
+  color: #bbb;
+  font-weight: 400;
 }

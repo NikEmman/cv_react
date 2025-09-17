@@ -67,7 +67,7 @@ export default function IceGray({
               </div>
             </>
           ) : (
-            <div>
+            <div className="nameTitle">
               <h3>
                 {personalSection.firstName + " " + personalSection.lastName}
               </h3>

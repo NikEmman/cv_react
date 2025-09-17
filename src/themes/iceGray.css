@@ -10,13 +10,7 @@
   position: absolute;
   left: 25px;
 }
-.small-img {
-  width: 100px;
-  height: 100px;
-  border: 10px solid white;
-  top: 10px;
-  left: 10px;
-}
+
 /* Name Styling */
 .hero-iceGray {
   font-family: "Montserrat", sans-serif;
@@ -33,10 +27,9 @@
   justify-content: end;
   align-items: center;
   margin-bottom: 30px;
+  position: relative;
 }
-.hero-iceGray input {
-  align-self: end;
-}
+
 .hero-iceGray div {
   background-color: #d4dee6;
   height: 100%;
@@ -47,8 +40,7 @@
   justify-items: center;
   padding-right: 20px;
 }
-.hero-iceGray h4,
-.hero-iceGray div input {
+.hero-iceGray h4 {
   font-size: 0.7em;
 }
 /* Body Text Styling */
@@ -113,4 +105,95 @@
 .body-iceGray .borderBottom-iceGray {
   padding-bottom: 5px;
   margin-bottom: 5px;
+}
+.body-iceGray input,
+.body-iceGray textarea {
+  border: none;
+  background-color: transparent;
+  color: #2c3e50;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Name and job title inputs to match h3/h4 */
+.hero-iceGray input[placeholder="First Name"],
+.hero-iceGray input[placeholder="Last Name"] {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-style: inherit;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 10px;
+  background: none;
+  border: none;
+}
+
+.hero-iceGray input[placeholder="Job Title"] {
+  font-size: 1.75rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 5px;
+  background: none;
+  border: none;
+}
+
+/* MainItem inputs */
+.mainItem-iceGray input {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mainItem-iceGray input.bold {
+  font-weight: 800;
+  font-size: 1em;
+}
+
+.mainItem-iceGray .itemDates input {
+  font-size: 1em;
+  font-weight: 400;
+  width: 80px;
+  color: #333;
+  background: none;
+  border: none;
+}
+
+.mainItem-iceGray input::placeholder {
+  color: #aaa;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+/* SideItem inputs */
+.body-iceGray .listItem input,
+.body-iceGray .listItem textarea {
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: 400;
+}
+.photo-input-label-iceGray {
+  /* font-style: inherit;
+  font-size: inherit; */
+  cursor: pointer;
+  position: absolute;
+}
+.photo-input {
+  display: none;
 }

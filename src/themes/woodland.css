@@ -73,7 +73,15 @@ aside .sectionTitle-woodland {
 main .sectionTitle-woodland {
   color: #31615f;
 }
-
+.body-woodland input,
+.body-woodland textarea {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+}
 .body-woodland hr {
   display: none;
 }

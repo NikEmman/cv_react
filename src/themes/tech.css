@@ -3,6 +3,11 @@
   justify-content: center;
   font-family: "Futura", "Helvetica", "Arial", sans-serif;
 }
+.body-tech input,
+.body-tech textarea {
+  border: none;
+  background-color: whitesmoke;
+}
 .hero-tech {
   display: flex;
   justify-content: space-between;
@@ -12,9 +17,10 @@
 .name input {
   text-transform: uppercase;
   font-size: 3.5em;
+  font-weight: 700;
 }
 .name h3:first-child::before,
-.name input:first-child::before {
+input[placeholder="First Name"]::before {
   content: "<";
 }
 .hero-tech h3:last-child::after,

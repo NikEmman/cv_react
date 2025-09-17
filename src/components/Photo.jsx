@@ -8,7 +8,16 @@ export default function Photo({ photo, handleAddPhoto, isEditable, theme }) {
         src={photo.url}
         alt="Personal Photo"
       ></img>
-      {isEditable && <input onChange={handleAddPhoto} type="file"></input>}
+      {isEditable && (
+        <label className={`photo-input-label-${theme}`}>
+          <input
+            onChange={handleAddPhoto}
+            type="file"
+            className="photo-input"
+          />
+          📷 Change Photo
+        </label>
+      )}
     </>
   );
 }

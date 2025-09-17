@@ -35,6 +35,7 @@ export default function MainItem({
       <li className={`li-${theme}`} key={index}>
         <input
           placeholder="Thing you accomplished"
+          className={`li-${theme}`}
           value={desc}
           onChange={handleDescChange(index)}
         />
