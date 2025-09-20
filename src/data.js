@@ -3,8 +3,8 @@ const defaultData = {
     {
       id: 100,
       title: "Person",
-      firstName: "Me",
-      lastName: "Myself and I",
+      firstName: "John",
+      lastName: "Smith",
       jobTitle: "Project Manager",
     },
     {

@@ -97,30 +97,34 @@ export default function Woodland({
               {isEditable ? (
                 <>
                   <div>
-                    <input
-                      className="firstName"
-                      placeholder="First Name"
-                      value={personalSection.firstName}
-                      onChange={(e) =>
-                        handleNameChange("firstName", e.target.value)
-                      }
-                    />
-                    <input
-                      placeholder="Last Name"
-                      className="lastName"
-                      value={personalSection.lastName}
-                      onChange={(e) =>
-                        handleNameChange("lastName", e.target.value)
-                      }
-                    />
-                    <input
-                      placeholder="Job Title"
-                      className="jobTitle"
-                      value={personalSection.jobTitle}
-                      onChange={(e) =>
-                        handleNameChange("jobTitle", e.target.value)
-                      }
-                    />
+                    <h1 className="firstName">
+                      <input
+                        placeholder="First Name"
+                        value={personalSection.firstName}
+                        onChange={(e) =>
+                          handleNameChange("firstName", e.target.value)
+                        }
+                      />
+                    </h1>
+                    <h1 className="lastName">
+                      <input
+                        placeholder="Last Name"
+                        className="lastName"
+                        value={personalSection.lastName}
+                        onChange={(e) =>
+                          handleNameChange("lastName", e.target.value)
+                        }
+                      />
+                    </h1>
+                    <h2 className="jobTitle">
+                      <input
+                        placeholder="Job Title"
+                        value={personalSection.jobTitle}
+                        onChange={(e) =>
+                          handleNameChange("jobTitle", e.target.value)
+                        }
+                      />
+                    </h2>
                   </div>
                 </>
               ) : (

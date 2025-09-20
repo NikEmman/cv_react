@@ -99,3 +99,14 @@ main .sectionTitle-woodland {
 .body-woodland li {
   text-align: justify;
 }
+.body-iceGray input[placeholder="First Name"],
+.body-iceGray input[placeholder="Last Name"],
+.body-iceGray input[placeholder="Job Title"] {
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+.body-iceGray input[placeholder="Last Name"] {
+  text-wrap: wrap;
+}

@@ -37,7 +37,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-items: center;
   padding-right: 20px;
 }
 .hero-iceGray h4 {
@@ -189,11 +188,17 @@
   font-weight: 400;
 }
 .photo-input-label-iceGray {
-  /* font-style: inherit;
-  font-size: inherit; */
+  font-size: large;
   cursor: pointer;
   position: absolute;
+  left: 5%;
+  top: 100%;
 }
 .photo-input {
   display: none;
+}
+.body-iceGray input[placeholder="First Name"],
+.body-iceGray input[placeholder="Last Name"],
+.body-iceGray input[placeholder="Job Title"] {
+  width: 60%;
 }
