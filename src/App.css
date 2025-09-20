@@ -39,6 +39,7 @@ button:hover {
 .container {
   width: 21cm;
   min-height: 29.7cm;
+  padding: 20px;
 }
 .grid-repeat {
   display: grid;
@@ -50,6 +51,7 @@ button:hover {
 textarea {
   height: 7.5em;
 }
+
 @media print {
   button,
   select {

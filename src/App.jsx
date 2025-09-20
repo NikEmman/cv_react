@@ -6,10 +6,11 @@ import MonoPink from "./themes/MonoPink";
 import Tech from "./themes/Tech";
 import Woodland from "./themes/Woodland";
 import IceGray from "./themes/IceGray";
+import html2pdf from "html2pdf.js";
 function App() {
   const [isEditable, setIsEditable] = useState(false);
   const [myData, setMyData] = useState(defaultData);
-  const [theme, setTheme] = useState("woodland");
+  const [theme, setTheme] = useState("simple");
 
   const handleEditClick = () => setIsEditable(true);
   const handleSaveClick = () => {
@@ -173,6 +174,10 @@ function App() {
       return { ...prevData, sections: updatedSections };
     });
   };
+  const handleDownload = () => {
+    const element = document.getElementById("pdf-content");
+    html2pdf().from(element).save(`CV-${myData.sections[0].lastName}.pdf`);
+  };
   let ThemeComponent;
   switch (theme) {
     case "simple":
@@ -206,7 +211,7 @@ function App() {
           <button onClick={handleEditClick}>Edit</button>
         )}
         <select
-          defaultValue={"woodland"}
+          defaultValue={"simple"}
           name="theme"
           onChange={(e) => setTheme(e.target.value)}
         >
@@ -216,22 +221,24 @@ function App() {
           <option value="iceGray">IceGray</option>
           <option value="woodland">Woodland</option>
         </select>
-        <button onClick={window.print}>Print</button>
+        <button onClick={handleDownload}>Print</button>
       </header>
 
-      <ThemeComponent
-        myData={myData}
-        isEditable={isEditable}
-        theme={theme}
-        handleItemChange={handleItemChange}
-        handleNameChange={handleNameChange}
-        handleAddItem={handleAddItem}
-        handleRemoveItem={handleRemoveItem}
-        handleAddMainItem={handleAddMainItem}
-        handleAddDescriptionItem={handleAddDescriptionItem}
-        handleDeleteDescriptionItem={handleDeleteDescriptionItem}
-        handleAddPhoto={handleAddPhoto}
-      />
+      <div id="pdf-content">
+        <ThemeComponent
+          myData={myData}
+          isEditable={isEditable}
+          theme={theme}
+          handleItemChange={handleItemChange}
+          handleNameChange={handleNameChange}
+          handleAddItem={handleAddItem}
+          handleRemoveItem={handleRemoveItem}
+          handleAddMainItem={handleAddMainItem}
+          handleAddDescriptionItem={handleAddDescriptionItem}
+          handleDeleteDescriptionItem={handleDeleteDescriptionItem}
+          handleAddPhoto={handleAddPhoto}
+        />
+      </div>
     </>
   );
 }
